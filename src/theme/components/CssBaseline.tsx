@@ -7,6 +7,7 @@ const CssBaseline: Components<Omit<Theme, 'components'>>['MuiCssBaseline'] = {
   styleOverrides: (theme) => ({
     body: {
       fontVariantLigatures: 'none',
+      backgroundColor: theme.palette.grey[200],
       ...scrollbar(theme),
     },
     ...echart(),
