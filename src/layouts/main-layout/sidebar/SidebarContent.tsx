@@ -1,4 +1,4 @@
-import { Box, Link, List, Stack, Typography } from '@mui/material';
+import { Box, Link, List, Stack, Toolbar, Typography } from '@mui/material';
 import sitemap from 'routes/sitemap';
 import NavItem from './NavItem';
 import SidebarCard from './SidebarCard';
@@ -24,15 +24,13 @@ const NavItems = () => {
 const SidebarContent = () => {
   return (
     <>
-      <Stack
-        justifyContent="center"
-        alignItems="center"
-        sx={{ height: 130, borderBottom: 1, borderBottomColor: 'grey.200' }}
-      >
-        <Typography variant="body2" component={Link} href={rootPaths.root}>
-          HORIZON
-        </Typography>
-      </Stack>
+      <Toolbar sx={{ borderBottom: 1, borderBottomColor: 'grey.200' }}>
+        <Stack justifyContent="center" alignItems="center" sx={{ width: 1 }}>
+          <Typography variant="body2" component={Link} href={rootPaths.root}>
+            HORIZON
+          </Typography>
+        </Stack>
+      </Toolbar>
 
       <Box
         sx={{
