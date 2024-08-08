@@ -18,7 +18,7 @@ const VerticalNavbar = ({
   return (
     <Box
       component="nav"
-      sx={{ width: { md: drawerWidth }, flexShrink: { sm: 0 } }}
+      sx={{ width: { lg: drawerWidth }, flexShrink: { sm: 0 } }}
       aria-label="drawer"
     >
       <Drawer
@@ -30,7 +30,7 @@ const VerticalNavbar = ({
           keepMounted: true, // Better open performance on mobile.
         }}
         sx={{
-          display: { xs: 'block', md: 'none' },
+          display: { xs: 'block', lg: 'none' },
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
         }}
       >
@@ -40,7 +40,7 @@ const VerticalNavbar = ({
       <Drawer
         variant="permanent"
         sx={{
-          display: { xs: 'none', md: 'block' },
+          display: { xs: 'none', lg: 'block' },
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
         }}
         open

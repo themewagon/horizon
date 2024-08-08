@@ -10,15 +10,19 @@ import Link from './components/Link';
 import Stack from './components/Stack';
 import Paper from './components/Paper';
 import Drawer from './components/Drawer';
+import AppBar from './components/AppBar';
+import InputBase from './components/InputBase';
+import FilledInput from './components/FilledInput';
+import InputAdornment from './components/InputAdornment';
 
 export const theme = createTheme({
   palette,
   typography,
-  //   mixins: {
-  //     toolbar: {
-  //       minHeight: 120,
-  //     },
-  //   },
+  mixins: {
+    toolbar: {
+      minHeight: 130,
+    },
+  },
   components: {
     MuiCssBaseline: CssBaseline,
     MuiLink: Link,
@@ -29,6 +33,11 @@ export const theme = createTheme({
     MuiListItemButton: ListItemButton,
     MuiListItemIcon: ListItemIcon,
     MuiListItemText: ListItemText,
+
+    MuiAppBar: AppBar,
+    MuiInputBase: InputBase,
+    MuiFilledInput: FilledInput,
+    MuiInputAdornment: InputAdornment,
   },
 });
 

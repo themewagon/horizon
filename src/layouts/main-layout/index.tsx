@@ -8,7 +8,7 @@ const drawerWidth = 290;
 
 const MainLayout = ({ children }: PropsWithChildren) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [, setIsClosing] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   const handleDrawerClose = () => {
     setIsClosing(true);
@@ -19,9 +19,15 @@ const MainLayout = ({ children }: PropsWithChildren) => {
     setIsClosing(false);
   };
 
+  const handleDrawerToggle = () => {
+    if (!isClosing) {
+      setMobileOpen(!mobileOpen);
+    }
+  };
+
   return (
     <Stack direction="row">
-      <Topbar />
+      <Topbar drawerWidth={drawerWidth} onHandleDrawerToggle={handleDrawerToggle} />
 
       <VerticalNavbar
         drawerWidth={drawerWidth}
