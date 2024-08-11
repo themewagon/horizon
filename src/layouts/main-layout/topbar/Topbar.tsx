@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
-import { AppBar, IconButton, Stack, Typography } from '@mui/material';
+import { AppBar, IconButton, Stack, Typography, useScrollTrigger } from '@mui/material';
 
 import sitemap from 'routes/sitemap';
 import IconifyIcon from 'components/base/IconifyIcon';
@@ -14,6 +14,11 @@ interface TopbarProps {
 
 const Topbar = ({ drawerWidth, onHandleDrawerToggle }: TopbarProps) => {
   const location = useLocation();
+
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  });
 
   const pageTitle = useMemo(() => {
     const navItem = sitemap.find((navItem) => location.pathname === navItem.path);
@@ -29,6 +34,7 @@ const Topbar = ({ drawerWidth, onHandleDrawerToggle }: TopbarProps) => {
         px: 2.5,
         ml: { sm: `${drawerWidth}px` },
         height: 130,
+        bgcolor: trigger ? 'common.white' : 'transparent',
       }}
     >
       <Typography variant="body1" color="primary.lighter" mb={0.25}>
