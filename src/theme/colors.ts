@@ -12,7 +12,9 @@ export const indigo = {
 };
 
 export const lightBlue = {
+  300: '#4481EB',
   500: '#6AD2FF',
+  700: '#04BEFE',
 };
 
 export const red = {

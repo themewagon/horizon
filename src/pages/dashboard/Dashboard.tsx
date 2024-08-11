@@ -1,10 +1,11 @@
 import { Grid } from '@mui/material';
+import Analytics from 'components/sections/dashboard/analytics/Analytics';
 
 const Dashboard = () => {
   return (
-    <Grid container spacing={2.5}>
+    <Grid container spacing={2.5} sx={{ flexGrow: 1 }}>
       <Grid item xs={12}>
-        Analytics
+        <Analytics />
       </Grid>
 
       <Grid item xs={12}>
