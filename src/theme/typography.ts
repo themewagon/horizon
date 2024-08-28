@@ -1,80 +1,66 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 
+export const fontFamily = {
+  DMSans: ['DM Sans', 'sans-serif'].join(','),
+  poppins: ['Poppins', 'sans-serif'].join(','),
+};
+
 const typography: TypographyOptions = {
-  fontFamily: ['DM Sans', 'Poppins', 'sans-serif'].join(','),
-
-  // lineHeight / fontSize
-  // fontWeightLight: 300,
-  // fontWeightRegular: 400,
-  // fontWeightMedium: 500,
-  // fontWeightBold: 700,
-
+  fontFamily: fontFamily.DMSans,
   h1: {
     fontWeight: 700,
-    fontSize: '2.25rem', // 36px
-    lineHeight: 1.55, // 56px
+    fontSize: '2.25rem',
+    lineHeight: 1.55,
   },
-
   h2: {
     fontWeight: 700,
-    fontSize: '2.215rem', // 34px
-    lineHeight: 1.24, // 42px
+    fontSize: '2.215rem',
+    lineHeight: 1.24,
   },
-
   h3: {
     fontWeight: 700,
-    fontSize: '1.5rem', // 24px
-    lineHeight: 1.33, // 32px
+    fontSize: '1.5rem',
+    lineHeight: 1.33,
   },
-
   h4: {
     fontWeight: 700,
-    fontSize: '1.25rem', // 20px
-    lineHeight: 1.6, //32px
+    fontSize: '1.25rem',
+    lineHeight: 1.6,
   },
-
   h5: {
     fontWeight: 700,
-    fontSize: '1.125rem', // 18px
-    lineHeight: 1.66, // 30px
+    fontSize: '1.125rem',
+    lineHeight: 1.66,
   },
-
   h6: {
     fontWeight: 700,
-    fontSize: '1rem', // 16px
-    lineHeight: 1.875, // 30px
+    fontSize: '1rem',
+    lineHeight: 1.875,
   },
-
   subtitle1: {
     fontWeight: 500,
-    fontSize: '0.75rem', // 12px
-    lineHeight: 1.6, //20px
+    fontSize: '0.75rem',
+    lineHeight: 1.6,
   },
-
   subtitle2: {
     fontWeight: 700,
-    fontSize: '1rem', // 16px
-    lineHeight: 1.75, //28px
+    fontSize: '1rem',
+    lineHeight: 1.75,
   },
-
   body1: {
     fontWeight: 500,
-    fontSize: '0.875rem', // 14px
-    lineHeight: 1.71, // 24px
+    fontSize: '0.875rem',
+    lineHeight: 1.71,
   },
-
   body2: {
     fontWeight: 700,
-    fontSize: '1.625rem', // 26px
-    lineHeight: 1.625, // 16px
-    fontFamily: 'Poppins',
+    fontSize: '1.625rem',
+    lineHeight: 1.625,
   },
-
   button: {
-    textTransform: 'none',
     fontWeight: 700,
-    fontSize: '1rem', // 16px
-    lineHeight: 1.75, //28px
+    fontSize: '1rem',
+    lineHeight: 1.75,
   },
 };
 

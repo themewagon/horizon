@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import Analytics from 'components/sections/dashboard/analytics/Analytics';
+import Analytics from 'components/sections/dashboard/analytics';
 
 const Dashboard = () => {
   return (
@@ -7,14 +7,12 @@ const Dashboard = () => {
       <Grid item xs={12}>
         <Analytics />
       </Grid>
-
       <Grid item xs={12}>
         Line Chart
       </Grid>
       <Grid item xs={12}>
         Stacked Bar Chart
       </Grid>
-
       <Grid item xs={12}>
         Check Table
       </Grid>
@@ -24,7 +22,6 @@ const Dashboard = () => {
       <Grid item xs={12}>
         Pie Chart
       </Grid>
-
       <Grid item xs={12}>
         Complex Table
       </Grid>
@@ -34,7 +31,6 @@ const Dashboard = () => {
       <Grid item xs={12}>
         Calendar
       </Grid>
-
       <Grid item xs={12}>
         Business Design
       </Grid>
