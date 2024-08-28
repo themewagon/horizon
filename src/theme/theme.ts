@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material';
 import palette from './palette';
 import typography from './typography';
-import shadows from './shadows';
+import customShadows from './shadows';
 import CssBaseline from './components/CssBaseline';
 import ListItemButton from './components/ListItemButton';
 import ListItemIcon from './components/ListItemIcon';
@@ -18,6 +18,7 @@ import InputAdornment from './components/InputAdornment';
 export const theme = createTheme({
   palette,
   typography,
+  customShadows,
   mixins: {
     toolbar: {
       minHeight: 130,
@@ -48,9 +49,4 @@ export const theme = createTheme({
     MuiFilledInput: FilledInput,
     MuiInputAdornment: InputAdornment,
   },
-});
-
-// Add custom shadows to theme
-shadows.forEach((shadow, index) => {
-  theme.shadows[index + 1] = shadow;
 });
