@@ -27,7 +27,7 @@ const menuItems: MenuItem[] = [
   },
 ];
 
-const AccountDropdown = () => {
+const ProfileMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -91,4 +91,4 @@ const AccountDropdown = () => {
   );
 };
 
-export default AccountDropdown;
+export default ProfileMenu;

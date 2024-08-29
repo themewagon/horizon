@@ -1,64 +1,67 @@
 import paths, { rootPaths } from './paths';
 
-export interface MenuItem {
-  id: number;
-  name: string;
+export interface SubMenuItem {
+  subheader: string;
   pathName: string;
-  path?: string;
+  path: string;
+  icon?: string;
   active?: boolean;
-  icon: string;
+  items?: SubMenuItem[];
+}
+
+export interface MenuItem {
+  id: number | string;
+  subheader: string;
+  path?: string;
+  icon?: string;
+  avatar?: string;
+  active?: boolean;
+  items?: SubMenuItem[];
 }
 
 const sitemap: MenuItem[] = [
   {
     id: 1,
-    name: 'Dashboard',
+    subheader: 'Dashboard',
     path: rootPaths.root,
-    pathName: 'dashboard',
     icon: 'ic:round-home',
     active: true,
   },
   {
     id: 2,
-    name: 'NFT Marketplace',
+    subheader: 'NFT Marketplace',
     path: '#!',
-    pathName: 'nft-marketplace',
     icon: 'ic:outline-shopping-cart',
   },
   {
     id: 3,
-    name: 'Tables',
+    subheader: 'Tables',
     path: '#!',
-    pathName: 'tables',
     icon: 'ic:round-bar-chart',
   },
   {
     id: 4,
-    name: 'Kanban',
+    subheader: 'Kanban',
     path: '#!',
-    pathName: 'kanban',
     icon: 'ic:round-dashboard',
   },
   {
     id: 5,
-    name: 'Profile',
+    subheader: 'Profile',
     path: '#!',
-    pathName: 'profile',
     icon: 'ic:baseline-person',
   },
   {
     id: 6,
-    name: 'Sign In',
+    subheader: 'Sign In',
     path: paths.signin,
-    pathName: 'sign-in',
     icon: 'ic:round-lock',
     active: true,
   },
   {
     id: 7,
-    name: 'Sign Up',
+    subheader: 'Sign Up',
     path: paths.signup,
-    pathName: 'sign-up',
     icon: 'ic:baseline-person-add-alt-1',
     active: true,
   },

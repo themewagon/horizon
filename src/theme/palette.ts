@@ -1,63 +1,85 @@
-import { PaletteOptions } from '@mui/material/styles';
-import { green, grey, indigo, lightBlue, red, yellow } from './colors';
+import { PaletteColorOptions, PaletteOptions } from '@mui/material/styles';
+import { gray, red, green, yellow, skyblue, purple, indigo, white } from './colors';
 
 declare module '@mui/material/styles' {
-  // interface Palette {
-  //   neutral: PaletteColor;
-  // }
-
-  // interface PaletteOptions {
-  //   neutral?: PaletteColorOptions;
-  // }
-  interface PaletteColor {
-    lighter: string;
-    darker: string;
+  interface PaletteOptions {
+    neutral?: PaletteColorOptions;
+    transparent?: {
+      success: PaletteColorOptions;
+      warning: PaletteColorOptions;
+      error: PaletteColorOptions;
+    };
+    gradients?: {
+      primary: PaletteColorOptions;
+    };
   }
   interface SimplePaletteColorOptions {
     lighter?: string;
     darker?: string;
+    state?: string;
+  }
+  interface Palette {
+    neutral: PaletteColor;
+    gradients: {
+      primary: PaletteColor;
+    };
+    transparent: {
+      success: PaletteColor;
+      warning: PaletteColor;
+      error: PaletteColor;
+    };
+  }
+  interface PaletteColor {
+    lighter: string;
+    darker: string;
+    state: string;
   }
 }
 
 const palette: PaletteOptions = {
-  grey,
-  text: {
-    primary: grey[100],
-    secondary: indigo[500],
+  neutral: {
+    light: gray[100],
+    main: gray[500],
+    dark: gray[900],
   },
-
-  action: {
-    hover: indigo[500],
-    selected: indigo[500],
-  },
-
-  // neutral: {
-  //   main: grey[100],
-  // },
-
   primary: {
-    lighter: indigo[100],
+    light: skyblue[500],
+    main: purple[500],
+  },
+  secondary: {
     light: indigo[300],
     main: indigo[500],
-    dark: indigo[700],
   },
-
-  error: {
-    main: red[500],
+  info: {
+    lighter: white[100],
+    light: white[200],
+    main: white[300],
+    dark: white[400],
+    darker: white[500],
   },
-
-  warning: {
-    main: yellow[500],
-  },
-
   success: {
     main: green[500],
+    dark: green[900],
   },
-
-  info: {
-    light: lightBlue[300],
-    main: lightBlue[500],
-    dark: lightBlue[700],
+  warning: {
+    light: yellow[300],
+    main: yellow[500],
+  },
+  error: {
+    light: red[100],
+    main: red[500],
+    dark: red[900],
+  },
+  text: {
+    primary: indigo[500],
+    secondary: gray[900],
+    disabled: gray[500],
+  },
+  gradients: {
+    primary: {
+      main: purple[500],
+      state: indigo[300],
+    },
   },
 };
 

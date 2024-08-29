@@ -1,54 +1,24 @@
-import { PropsWithChildren, useState } from 'react';
-import { Box, Stack, Toolbar } from '@mui/material';
-import VerticalNavbar from './sidebar/VerticalNavbar';
-import Topbar from './topbar/Topbar';
-import Footer from './footer/Footer';
-
-const drawerWidth = 290;
+import { useState, PropsWithChildren } from 'react';
+import Stack from '@mui/material/Stack';
+import Sidebar from 'layouts/main-layout/sidebar';
+import Topbar from './topbar';
 
 const MainLayout = ({ children }: PropsWithChildren) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
 
-  const handleDrawerClose = () => {
-    setIsClosing(true);
-    setMobileOpen(false);
-  };
-
-  const handleDrawerTransitionEnd = () => {
-    setIsClosing(false);
-  };
-
-  const handleDrawerToggle = () => {
-    if (!isClosing) {
-      setMobileOpen(!mobileOpen);
-    }
-  };
-
   return (
-    <Stack direction="row">
-      <Topbar drawerWidth={drawerWidth} onHandleDrawerToggle={handleDrawerToggle} />
-
-      <VerticalNavbar
-        drawerWidth={drawerWidth}
-        mobileOpen={mobileOpen}
-        onTransitionEnd={handleDrawerTransitionEnd}
-        onHandleDrawerClose={handleDrawerClose}
-      />
-
-      <Box
+    <Stack width={1} minHeight="100vh">
+      <Sidebar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} setIsClosing={setIsClosing} />
+      <Stack
         component="main"
-        sx={{
-          flexGrow: 1,
-          p: 2.5,
-          minHeight: '100vh',
-          width: { xs: 1, md: `calc(100% - ${drawerWidth}px)` },
-        }}
+        direction="column"
+        width={{ xs: 1, lg: 'calc(100% - 290px)' }}
+        flexGrow={1}
       >
-        <Toolbar />
+        <Topbar isClosing={isClosing} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
         {children}
-        <Footer />
-      </Box>
+      </Stack>
     </Stack>
   );
 };
