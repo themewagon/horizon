@@ -25,6 +25,7 @@ const DrawerItems = () => {
         justifyContent="flex-start"
         borderBottom={1}
         borderColor="info.main"
+        bgcolor="info.lighter"
         zIndex={1000}
       >
         <ButtonBase component={Link} href="/" disableRipple>
@@ -40,7 +41,7 @@ const DrawerItems = () => {
         </ButtonBase>
       </Stack>
 
-      <List component="nav" sx={{ mt: 2.5, mb: 10, px: 4.5 }}>
+      <List component="nav" sx={{ mt: 2.5, mb: 10, p: 0, pl: 3 }}>
         {sitemap.map((route) =>
           route.items ? (
             <CollapseListItem key={route.id} {...route} />
