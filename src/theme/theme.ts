@@ -1,19 +1,34 @@
 import { createTheme } from '@mui/material';
+import type {} from '@mui/x-data-grid/themeAugmentation';
 import palette from './palette';
 import typography from './typography';
 import customShadows from './shadows';
-import CssBaseline from './components/CssBaseline';
-import ListItemButton from './components/ListItemButton';
-import ListItemIcon from './components/ListItemIcon';
-import ListItemText from './components/ListItemText';
-import Link from './components/Link';
-import Stack from './components/Stack';
-import Paper from './components/Paper';
-import Drawer from './components/Drawer';
-import AppBar from './components/AppBar';
-import InputBase from './components/InputBase';
-import FilledInput from './components/FilledInput';
-import InputAdornment from './components/InputAdornment';
+import CssBaseline from './components/utils/CssBaseline';
+import Stack from './components/layout/Stack';
+import Paper from './components/surfaces/Paper';
+import Button from './components/buttons/Button';
+import ButtonBase from './components/buttons/ButtonBase';
+import IconButton from './components/buttons/IconButton';
+import Toolbar from './components/buttons/Toolbar';
+import Chip from './components/data-display/Chip';
+import Badge from './components/data-display/Badge';
+import Checkbox from './components/inputs/Checkbox';
+import FilledInput from './components/inputs/FilledInput';
+import FormControlLabel from './components/inputs/FormControlLabel';
+import InputAdornment from './components/inputs/InputAdornment';
+import InputBase from './components/inputs/InputBase';
+import OutlinedInput from './components/inputs/OutlinedInput';
+import Select from './components/inputs/Select';
+import Collapse from './components/list/Collapse';
+import List from './components/list/List';
+import ListItemButton from './components/list/ListItemButton';
+import ListItemIcon from './components/list/ListItemIcon';
+import ListItemText from './components/list/ListItemText';
+import MenuItem from './components/list/MenuItem';
+import AppBar from './components/navigation/AppBar';
+import Drawer from './components/navigation/Drawer';
+import Link from './components/navigation/Link';
+import PaginationItem from './components/pagination/PaginationItem';
 
 export const theme = createTheme({
   palette,
@@ -34,19 +49,31 @@ export const theme = createTheme({
     },
   },
   components: {
-    MuiCssBaseline: CssBaseline,
-    MuiLink: Link,
     MuiStack: Stack,
     MuiPaper: Paper,
-
-    MuiDrawer: Drawer,
+    MuiButton: Button,
+    MuiButtonBase: ButtonBase,
+    MuiIconButton: IconButton,
+    MuiToolbar: Toolbar,
+    MuiBadge: Badge,
+    MuiChip: Chip,
+    MuiCheckbox: Checkbox,
+    MuiFilledInput: FilledInput,
+    MuiFormControlLabel: FormControlLabel,
+    MuiInputAdornment: InputAdornment,
+    MuiInputBase: InputBase,
+    MuiOutlinedInput: OutlinedInput,
+    MuiSelect: Select,
+    MuiCollapse: Collapse,
+    MuiList: List,
     MuiListItemButton: ListItemButton,
     MuiListItemIcon: ListItemIcon,
     MuiListItemText: ListItemText,
-
+    MuiMenuItem: MenuItem,
     MuiAppBar: AppBar,
-    MuiInputBase: InputBase,
-    MuiFilledInput: FilledInput,
-    MuiInputAdornment: InputAdornment,
+    MuiDrawer: Drawer,
+    MuiLink: Link,
+    MuiPaginationItem: PaginationItem,
+    MuiCssBaseline: CssBaseline,
   },
 });

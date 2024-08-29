@@ -3,23 +3,21 @@ import { Components } from '@mui/material/styles/components';
 
 const Drawer: Components<Omit<Theme, 'components'>>['MuiDrawer'] = {
   styleOverrides: {
-    root: ({ theme }) => ({
+    root: {
       '&:hover, &:focus': {
         '*::-webkit-scrollbar, *::-webkit-scrollbar-thumb': {
           visibility: 'visible',
         },
       },
-      '*::-webkit-scrollbar-track': {
-        marginTop: theme.spacing(14),
-      },
-    }),
+    },
     paper: ({ theme }) => ({
       padding: 0,
+      width: '290px',
       height: '100vh',
-      width: 290,
       border: 0,
       borderRadius: 0,
-      backgroundColor: theme.palette.info.lighter,
+      backgroundColor: theme.palette.info.light,
+      boxShadow: 'none',
       boxSizing: 'border-box',
     }),
   },

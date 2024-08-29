@@ -21,7 +21,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen, setIsClosing }: SidebarProps) => {
   return (
     <Box
       component="nav"
-      width={{ lg: 300 }}
+      width={{ lg: 290 }}
       flexShrink={{ lg: 0 }}
       display={{ xs: 'none', lg: 'block' }}
     >

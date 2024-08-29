@@ -1,12 +1,12 @@
 import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
 
-const ListItemIcon: Components<Omit<Theme, 'components'>>['MuiListItemIcon'] = {
+const Toolbar: Components<Omit<Theme, 'components'>>['MuiToolbar'] = {
   styleOverrides: {
     root: {
-      minWidth: 'auto',
+      padding: '0 !important',
     },
   },
 };
 
-export default ListItemIcon;
+export default Toolbar;
