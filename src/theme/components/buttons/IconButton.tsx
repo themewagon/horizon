@@ -5,7 +5,7 @@ const IconButton: Components<Omit<Theme, 'components'>>['MuiIconButton'] = {
   styleOverrides: {
     root: ({ theme }) => ({
       color: theme.palette.text.primary,
-      backgroundColor: theme.palette.info.lighter,
+      backgroundColor: theme.palette.info.darker,
       marginLeft: 0,
     }),
     sizeLarge: ({ theme }) => ({

@@ -4,7 +4,7 @@ import { Components } from '@mui/material/styles/components';
 const OutlinedInput: Components<Omit<Theme, 'components'>>['MuiOutlinedInput'] = {
   styleOverrides: {
     root: ({ theme }) => ({
-      borderRadius: theme.shape.borderRadius * 2,
+      borderRadius: theme.shape.borderRadius * 3.25,
     }),
     input: {
       padding: 0,
