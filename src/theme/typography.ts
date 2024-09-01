@@ -8,59 +8,52 @@ export const fontFamily = {
 const typography: TypographyOptions = {
   fontFamily: fontFamily.DMSans,
   h1: {
+    fontSize: '3rem',
     fontWeight: 700,
-    fontSize: '2.25rem',
-    lineHeight: 1.55,
   },
   h2: {
+    fontSize: '2.125rem',
     fontWeight: 700,
-    fontSize: '2.215rem',
-    lineHeight: 1.24,
   },
   h3: {
+    fontSize: '1.75rem',
     fontWeight: 700,
-    fontSize: '1.5rem',
-    lineHeight: 1.33,
   },
   h4: {
+    fontSize: '1.5rem',
     fontWeight: 700,
-    fontSize: '1.25rem',
-    lineHeight: 1.6,
   },
   h5: {
+    fontSize: '1.25rem',
     fontWeight: 700,
-    fontSize: '1.125rem',
-    lineHeight: 1.66,
   },
   h6: {
+    fontSize: '1.125rem',
     fontWeight: 700,
-    fontSize: '1rem',
-    lineHeight: 1.875,
   },
   subtitle1: {
-    fontWeight: 500,
-    fontSize: '0.75rem',
-    lineHeight: 1.6,
+    fontSize: '1rem',
+    fontWeight: 400,
   },
   subtitle2: {
-    fontWeight: 700,
-    fontSize: '1rem',
-    lineHeight: 1.75,
+    fontSize: '0.875rem',
+    fontWeight: 500,
   },
   body1: {
-    fontWeight: 500,
-    fontSize: '0.875rem',
-    lineHeight: 1.71,
+    fontSize: '1rem',
+    fontWeight: 400,
   },
   body2: {
-    fontWeight: 700,
-    fontSize: '1.625rem',
-    lineHeight: 1.625,
+    fontSize: '0.875rem',
+    fontWeight: 400,
+  },
+  caption: {
+    fontSize: '0.75rem',
+    fontWeight: 600,
   },
   button: {
-    fontWeight: 700,
     fontSize: '1rem',
-    lineHeight: 1.75,
+    fontWeight: 500,
   },
 };
 

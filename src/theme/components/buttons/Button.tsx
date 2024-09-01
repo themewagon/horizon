@@ -28,17 +28,14 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
     sizeLarge: ({ theme }) => ({
       padding: theme.spacing(1.125, 3),
       fontSize: theme.typography.h6.fontSize,
-      fontWeight: 600,
     }),
     sizeMedium: ({ theme }) => ({
       padding: theme.spacing(1, 2),
       fontSize: theme.typography.body1.fontSize,
-      fontWeight: 600,
     }),
     sizeSmall: ({ theme }) => ({
       padding: theme.spacing(0.875, 1.5),
       fontSize: theme.typography.caption.fontSize,
-      fontWeight: 700,
     }),
     startIcon: {
       marginRight: 10,
