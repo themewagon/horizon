@@ -16,7 +16,7 @@ const scrollbar = (theme: Theme) => ({
   },
   '*::-webkit-scrollbar-thumb': {
     borderRadius: 3,
-    backgroundColor: theme.palette.info.main,
+    backgroundColor: theme.palette.neutral.light,
     visibility: 'hidden',
   },
 });
