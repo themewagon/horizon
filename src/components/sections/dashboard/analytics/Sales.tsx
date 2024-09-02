@@ -1,20 +1,18 @@
-import { Box, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 
 const Sales = () => {
   return (
-    <Box
-      sx={{ bgcolor: 'common.white', borderRadius: 5, pt: 1.125, pb: 1.5, px: 2.5, minWidth: 200 }}
-    >
-      <Typography variant="body1" color="text.primary">
+    <Box component={Paper} px={2.5} py={1.5} height={100}>
+      <Typography variant="body2" color="text.disabled">
         Sales
       </Typography>
-      <Typography variant="h3" color="text.secondary">
-        $574.34
-      </Typography>
-      <Typography variant="subtitle1" color="text.primary">
-        <Box sx={{ color: 'success.main', fontWeight: 'fontWeightBold' }} component="span">
+      <Typography variant="h3">$574.34</Typography>
+      <Typography variant="caption" color="text.disabled" fontWeight={400}>
+        <Typography variant="body2" component="span" color="success.main" fontWeight={700}>
           +23%
-        </Box>{' '}
+        </Typography>{' '}
         since last month
       </Typography>
     </Box>
