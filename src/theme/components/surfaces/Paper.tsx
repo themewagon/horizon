@@ -7,7 +7,7 @@ const Paper: Components<Omit<Theme, 'components'>>['MuiPaper'] = {
     root: ({ theme }) => ({
       padding: theme.spacing(3.5),
       backgroundColor: theme.palette.info.lighter,
-      borderRadius: theme.shape.borderRadius * 3,
+      borderRadius: theme.shape.borderRadius * 5,
       boxShadow: 'none',
 
       '&.MuiMenu-paper': {
