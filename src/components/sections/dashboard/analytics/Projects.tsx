@@ -14,7 +14,7 @@ const Projects = () => {
         bgcolor="info.main"
         borderRadius="50%"
       >
-        <IconifyIcon icon="ic:baseline-file-copy" fontSize="h3.fontSize" color="primary.dark" />
+        <IconifyIcon icon="ic:baseline-file-copy" fontSize="h3.fontSize" color="primary.main" />
       </Stack>
       <div>
         <Typography variant="body2" color="text.disabled" noWrap>

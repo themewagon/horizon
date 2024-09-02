@@ -14,7 +14,7 @@ const Spend = () => {
         bgcolor="info.main"
         borderRadius="50%"
       >
-        <IconifyIcon icon="ic:round-attach-money" fontSize="h2.fontSize" color="primary.dark" />
+        <IconifyIcon icon="ic:round-attach-money" fontSize="h2.fontSize" color="primary.main" />
       </Stack>
       <div>
         <Typography variant="body2" color="text.disabled" noWrap>
