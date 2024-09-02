@@ -23,6 +23,7 @@ declare module '@mui/material/styles' {
     neutral: PaletteColor;
     gradients: {
       primary: PaletteColor;
+      secondary: PaletteColor;
     };
     transparent: {
       success: PaletteColor;

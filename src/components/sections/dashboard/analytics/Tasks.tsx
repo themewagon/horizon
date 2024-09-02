@@ -1,31 +1,28 @@
-import { Stack, Typography } from '@mui/material';
-import Add from 'components/icons/Add';
+import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import IconifyIcon from 'components/base/IconifyIcon';
 
 const Tasks = () => {
   return (
-    <Stack
-      direction="row"
-      alignItems="center"
-      columnGap={2.25}
-      sx={{ bgcolor: 'common.white', borderRadius: 5, p: 2.5, minWidth: 200 }}
-    >
+    <Stack component={Paper} p={2.5} alignItems="center" spacing={2.25} height={100}>
       <Stack
         alignItems="center"
         justifyContent="center"
+        height={56}
+        width={56}
+        borderRadius="50%"
         sx={(theme) => ({
-          height: 56,
-          width: 56,
-          background: `linear-gradient(90deg, ${theme.palette.info.light}, ${theme.palette.info.dark})`,
-          borderRadius: '50%',
+          background: `linear-gradient(90deg, ${theme.palette.gradients.secondary.main} 0%, ${theme.palette.gradients.secondary.state} 100%)`,
         })}
       >
-        <Add />
+        <IconifyIcon icon="ic:baseline-add-task" fontSize="h3.fontSize" color="info.lighter" />
       </Stack>
       <div>
-        <Typography variant="body1" color="text.primary">
+        <Typography variant="body2" color="text.disabled" noWrap>
           New Tasks
         </Typography>
-        <Typography variant="h3" color="text.secondary">
+        <Typography mt={0.25} variant="h3">
           154
         </Typography>
       </div>
