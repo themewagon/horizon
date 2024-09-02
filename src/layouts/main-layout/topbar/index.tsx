@@ -27,7 +27,6 @@ const Topbar = ({ isClosing, mobileOpen, setMobileOpen }: TopbarProps) => {
 
   return (
     <Stack
-      px={3.5}
       height={90}
       alignItems="center"
       justifyContent="space-between"

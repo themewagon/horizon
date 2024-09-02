@@ -13,8 +13,9 @@ const MainLayout = ({ children }: PropsWithChildren) => {
       <Stack
         component="main"
         direction="column"
-        width={{ xs: 1, lg: 'calc(100% - 290px)' }}
+        px={3.5}
         flexGrow={1}
+        width={{ xs: 1, lg: 'calc(100% - 290px)' }}
       >
         <Topbar isClosing={isClosing} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
         {children}
