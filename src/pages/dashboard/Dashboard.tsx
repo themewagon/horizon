@@ -1,16 +1,17 @@
 import { Grid } from '@mui/material';
 import Analytics from 'components/sections/dashboard/analytics';
+import TotalSpent from 'components/sections/dashboard/total-spent';
 
 const Dashboard = () => {
   return (
-    <Grid container spacing={2.5} sx={{ flexGrow: 1 }}>
+    <Grid container spacing={2.5}>
       <Grid item xs={12}>
         <Analytics />
       </Grid>
-      <Grid item xs={12}>
-        Line Chart
+      <Grid item xs={12} lg={6}>
+        <TotalSpent />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} lg={6}>
         Stacked Bar Chart
       </Grid>
       <Grid item xs={12}>

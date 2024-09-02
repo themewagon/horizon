@@ -1,5 +1,6 @@
 import { createTheme } from '@mui/material';
 import type {} from '@mui/x-data-grid/themeAugmentation';
+import type {} from '@mui/x-date-pickers/themeAugmentation';
 import palette from './palette';
 import typography from './typography';
 import customShadows from './shadows';
@@ -28,6 +29,8 @@ import MenuItem from './components/list/MenuItem';
 import AppBar from './components/navigation/AppBar';
 import Drawer from './components/navigation/Drawer';
 import Link from './components/navigation/Link';
+import YearCalendar from './components/date-picker/YearCalendar';
+import MonthCalendar from './components/date-picker/MonthCalendar';
 import PaginationItem from './components/pagination/PaginationItem';
 
 export const theme = createTheme({
@@ -73,6 +76,8 @@ export const theme = createTheme({
     MuiAppBar: AppBar,
     MuiDrawer: Drawer,
     MuiLink: Link,
+    MuiMonthCalendar: MonthCalendar,
+    MuiYearCalendar: YearCalendar,
     MuiPaginationItem: PaginationItem,
     MuiCssBaseline: CssBaseline,
   },
