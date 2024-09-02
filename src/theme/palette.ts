@@ -1,5 +1,5 @@
 import { PaletteColorOptions, PaletteOptions } from '@mui/material/styles';
-import { gray, red, green, yellow, skyblue, purple, indigo, white } from './colors';
+import { gray, red, green, blue, yellow, skyblue, purple, indigo, white } from './colors';
 
 declare module '@mui/material/styles' {
   interface PaletteOptions {
@@ -11,6 +11,7 @@ declare module '@mui/material/styles' {
     };
     gradients?: {
       primary: PaletteColorOptions;
+      secondary?: PaletteColorOptions;
     };
   }
   interface SimplePaletteColorOptions {
@@ -79,6 +80,10 @@ const palette: PaletteOptions = {
     primary: {
       main: purple[500],
       state: indigo[300],
+    },
+    secondary: {
+      main: blue[500],
+      state: skyblue[500],
     },
   },
 };

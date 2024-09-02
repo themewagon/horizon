@@ -12,8 +12,13 @@ export const gray = {
   900: '#707EAE',
 };
 
+export const blue = {
+  500: '#4481EB',
+};
+
 export const skyblue = {
-  500: '#6AD2FF',
+  300: '#6AD2FF',
+  500: '#04BEFE',
 };
 
 export const purple = {

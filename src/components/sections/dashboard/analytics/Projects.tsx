@@ -1,31 +1,26 @@
-import { Stack, Typography } from '@mui/material';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
 
 const Projects = () => {
   return (
-    <Stack
-      direction="row"
-      alignItems="center"
-      columnGap={2.25}
-      sx={{ bgcolor: 'common.white', borderRadius: 5, p: 2.5, minWidth: 200 }}
-    >
+    <Stack component={Paper} p={2.5} alignItems="center" spacing={2.25} height={100}>
       <Stack
         alignItems="center"
         justifyContent="center"
-        sx={{
-          height: 56,
-          width: 56,
-          bgcolor: 'grey.200',
-          borderRadius: '50%',
-        }}
+        height={56}
+        width={56}
+        bgcolor="info.main"
+        borderRadius="50%"
       >
-        <IconifyIcon icon="ic:baseline-file-copy" sx={{ fontSize: 26, color: 'primary.dark' }} />
+        <IconifyIcon icon="ic:baseline-file-copy" fontSize="h3.fontSize" color="primary.dark" />
       </Stack>
       <div>
-        <Typography variant="body1" color="text.primary" noWrap>
+        <Typography variant="body2" color="text.disabled" noWrap>
           Total Projects
         </Typography>
-        <Typography variant="h3" color="text.secondary">
+        <Typography mt={0.25} variant="h3">
           2935
         </Typography>
       </div>
