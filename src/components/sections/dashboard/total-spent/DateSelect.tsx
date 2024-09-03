@@ -52,6 +52,7 @@ const DateSelect = () => {
               '& .MuiPaper-root': {
                 p: 0,
                 boxShadow: customShadows[0],
+                borderRadius: 2.5,
               },
             },
           },
