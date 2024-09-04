@@ -79,7 +79,7 @@ const RevenueChart = ({ data, ...rest }: BarChartProps) => {
         name: item.name,
         type: 'bar',
         stack: 'total',
-        barWidth: 15,
+        barWidth: 14,
         label: {
           show: false,
         },

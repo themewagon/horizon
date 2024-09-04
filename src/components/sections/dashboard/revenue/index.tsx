@@ -1,10 +1,11 @@
+import { revenueChartData } from 'data/revenueChartData';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import ButtonBase from '@mui/material/ButtonBase';
 import IconifyIcon from 'components/base/IconifyIcon';
 import RevenueChart from './RevenueChart';
-import { revenueChartData } from 'data/revenueChartData';
 
 const Revenue = () => {
   return (
@@ -12,6 +13,7 @@ const Revenue = () => {
       <Stack justifyContent="space-between">
         <Typography variant="h4">Weekly Revenue</Typography>
         <Stack
+          component={ButtonBase}
           alignItems="center"
           justifyContent="center"
           height={36}
@@ -23,7 +25,7 @@ const Revenue = () => {
         </Stack>
       </Stack>
 
-      <RevenueChart data={revenueChartData} sx={{height: '260px !important'}} />
+      <RevenueChart data={revenueChartData} sx={{ height: '260px !important' }} />
     </Box>
   );
 };
