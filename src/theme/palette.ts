@@ -45,12 +45,12 @@ const palette: PaletteOptions = {
     dark: gray[900],
   },
   primary: {
-    light: skyblue[500],
+    light: purple[300],
     main: purple[500],
   },
   secondary: {
-    light: indigo[300],
-    main: indigo[500],
+    light: skyblue[300],
+    main: skyblue[500],
   },
   info: {
     lighter: white[100],

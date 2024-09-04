@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material';
 import Analytics from 'components/sections/dashboard/analytics';
+import Revenue from 'components/sections/dashboard/revenue';
 import TotalSpent from 'components/sections/dashboard/total-spent';
 
 const Dashboard = () => {
@@ -12,7 +13,7 @@ const Dashboard = () => {
         <TotalSpent />
       </Grid>
       <Grid item xs={12} lg={6}>
-        Stacked Bar Chart
+        <Revenue />
       </Grid>
       <Grid item xs={12}>
         Check Table

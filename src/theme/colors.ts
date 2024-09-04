@@ -22,6 +22,7 @@ export const skyblue = {
 };
 
 export const purple = {
+  300: '#6946ff',
   500: '#4318FF',
 };
 
