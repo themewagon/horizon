@@ -32,6 +32,7 @@ import Link from './components/navigation/Link';
 import YearCalendar from './components/date-picker/YearCalendar';
 import MonthCalendar from './components/date-picker/MonthCalendar';
 import PaginationItem from './components/pagination/PaginationItem';
+import DataGrid from './components/data-grid/DataGrid';
 
 export const theme = createTheme({
   palette,
@@ -76,6 +77,7 @@ export const theme = createTheme({
     MuiAppBar: AppBar,
     MuiDrawer: Drawer,
     MuiLink: Link,
+    MuiDataGrid: DataGrid,
     MuiMonthCalendar: MonthCalendar,
     MuiYearCalendar: YearCalendar,
     MuiPaginationItem: PaginationItem,
