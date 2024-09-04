@@ -1,6 +1,11 @@
-import { Box, Paper, Stack, Typography } from '@mui/material';
-import DateSelect from './DateSelect';
+import { spentChartData } from 'data/spentChartData';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import ButtonBase from '@mui/material/ButtonBase';
 import IconifyIcon from 'components/base/IconifyIcon';
+import DateSelect from './DateSelect';
 import SpentChart from './SpentChart';
 
 const TotalSpent = () => {
@@ -10,6 +15,7 @@ const TotalSpent = () => {
         <DateSelect />
 
         <Stack
+          component={ButtonBase}
           alignItems="center"
           justifyContent="center"
           height={36}
@@ -22,7 +28,7 @@ const TotalSpent = () => {
       </Stack>
 
       <Stack mt={1.75}>
-        <Box>
+        <div>
           <Typography mt={0.35} variant="h2" color="text.primary">
             $37.5K
           </Typography>
@@ -48,12 +54,9 @@ const TotalSpent = () => {
               On track
             </Typography>
           </Stack>
-        </Box>
+        </div>
 
-        <SpentChart
-          data={[80, 100, 80, 150, 100, 120]}
-          sx={{ flex: 1, height: '230px !important' }}
-        />
+        <SpentChart data={spentChartData} sx={{ flex: 1, height: '230px !important' }} />
       </Stack>
     </Box>
   );

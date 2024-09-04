@@ -22,14 +22,15 @@ echarts.use([
 ]);
 
 interface SpentChartProps {
-  data?: number[];
+  data?: {
+    line1: number[];
+    line2: number[];
+  };
   sx?: SxProps;
 }
 
 const SpentChart = ({ data, ...rest }: SpentChartProps) => {
   const theme = useTheme();
-  // let isTopOffset = true;
-
   const option = useMemo(
     () => ({
       grid: {
@@ -75,18 +76,6 @@ const SpentChart = ({ data, ...rest }: SpentChartProps) => {
             return [x - size.contentSize[0] / 2, bottomOffset];
           }
         },
-        // formatter: (params: TooltipComponentOption | TooltipComponentOption[]) => {
-        //   if (Array.isArray(params)) {
-        //     console.log(params);
-        //     const dataValue = Math.round(params[0].data);
-        //     const arrowPosition = isTopOffset ? 'bottom:-14px;' : 'top:-14px;';
-        //     return `<div style="position:relative; border-radius:10px;">
-        //         <p style="font-size:${theme.typography.body2.fontSize}; font-weight:500">${dataValue} Task</p>
-        //         <span style="position:absolute; ${arrowPosition} left:50%; transform:translate(-50%) rotate(45deg); width:12px; height:12px; background:${theme.palette.primary.dark}; border-top:none; border-left:none; border-right:none; border-bottom:none; z-index:-10000;"></span>
-        //       </div>`;
-        //   }
-        //   return '';
-        // },
       },
       xAxis: {
         type: 'category',
@@ -123,11 +112,17 @@ const SpentChart = ({ data, ...rest }: SpentChartProps) => {
       series: [
         {
           name: 'Line 1',
-          data: data,
+          data: data?.line1,
           type: 'line',
           smooth: true,
           showSymbol: false,
           itemStyle: {
+            color: theme.palette.primary.main,
+          },
+          lineStyle: {
+            width: 4,
+            type: 'solid',
+            cap: 'round',
             color: theme.palette.primary.main,
           },
           emphasis: {
@@ -145,42 +140,36 @@ const SpentChart = ({ data, ...rest }: SpentChartProps) => {
               shadowOffsetY: 20,
             },
           },
-          lineStyle: {
-            width: 3,
-            type: 'solid',
-            cap: 'round',
-            color: theme.palette.primary.main,
-          },
         },
         {
           name: 'Line 2',
-          data: [20, 60, 10, 80, 30, 80],
+          data: data?.line2,
           type: 'line',
           smooth: true,
           showSymbol: false,
           itemStyle: {
-            color: theme.palette.primary.light,
+            color: theme.palette.secondary.main,
+          },
+          lineStyle: {
+            width: 4,
+            type: 'solid',
+            cap: 'round',
+            color: theme.palette.secondary.main,
           },
           emphasis: {
             focus: 'series',
             scale: 3,
             itemStyle: {
               borderWidth: 3,
-              borderColor: theme.palette.primary.light,
+              borderColor: theme.palette.secondary.main,
             },
             lineStyle: {
               width: 4,
               shadowBlur: 25,
-              shadowColor: theme.palette.primary.light,
+              shadowColor: theme.palette.secondary.main,
               shadowOffsetX: 0,
               shadowOffsetY: 20,
             },
-          },
-          lineStyle: {
-            width: 3,
-            type: 'solid',
-            cap: 'round',
-            color: theme.palette.primary.light,
           },
         },
       ],
