@@ -1,13 +1,10 @@
 import { useState, ChangeEvent } from 'react';
-import {
-  Box,
-  Paper,
-  Stack,
-  Typography,
-  ButtonBase,
-  TextField,
-  InputAdornment,
-} from '@mui/material';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
 import IconifyIcon from 'components/base/IconifyIcon';
 import DataTable from './DataTable';
 
@@ -19,16 +16,17 @@ const ComplexTable = () => {
   };
 
   return (
-    <Box component={Paper} px={0}>
+    <Box component={Paper} px={0} height={390}>
       <Stack px={3.5} justifyContent="space-between">
         <Typography variant="h4">Complex Table</Typography>
+
         <TextField
           variant="filled"
           size="small"
           placeholder="Search Task"
           value={searchText}
           onChange={handleInputChange}
-          sx={{ width: 1, maxWidth: 250 }}
+          sx={{ width: 220 }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -37,20 +35,9 @@ const ComplexTable = () => {
             ),
           }}
         />
-        <Stack
-          component={ButtonBase}
-          alignItems="center"
-          justifyContent="center"
-          height={36}
-          width={36}
-          bgcolor="info.main"
-          borderRadius={2.5}
-        >
-          <IconifyIcon icon="ic:outline-more-horiz" color="primary.main" fontSize="h4.fontSize" />
-        </Stack>
       </Stack>
 
-      <Box mt={1.5} height={314}>
+      <Box mt={1} height={313}>
         <DataTable searchText={searchText} />
       </Box>
     </Box>

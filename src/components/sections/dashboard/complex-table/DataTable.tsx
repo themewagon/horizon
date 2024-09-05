@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
-import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import LinearProgress from '@mui/material/LinearProgress';
 import { DataGrid, GridColDef, useGridApiRef, GridApi } from '@mui/x-data-grid';
 import DataGridFooter from 'components/common/DataGridFooter';
+import IconifyIcon from 'components/base/IconifyIcon';
 import { rows } from 'data/complexTableData';
-import { Typography } from '@mui/material';
 import ActionMenu from './ActionMenu';
 
 const columns: GridColDef<(typeof rows)[number]>[] = [
@@ -17,82 +18,114 @@ const columns: GridColDef<(typeof rows)[number]>[] = [
   },
   {
     field: 'id',
-    headerName: 'Transaction Id',
+    headerName: 'ID',
     editable: false,
     align: 'left',
     flex: 2,
-    minWidth: 160,
+    minWidth: 130,
     renderHeader: () => (
-      <Typography variant="body2" fontWeight={600} ml={1}>
-        Transaction Id
+      <Typography variant="body2" color="text.disabled" fontWeight={500} ml={1}>
+        ID
       </Typography>
     ),
     renderCell: (params) => (
       <Stack ml={1} height={1} direction="column" alignSelf="center" justifyContent="center">
-        <Typography variant="body2" fontWeight={500}>
+        <Typography variant="body2" fontWeight={600}>
           {params.value}
         </Typography>
       </Stack>
     ),
   },
   {
-    field: 'category',
-    headerName: 'Category',
+    field: 'name',
+    headerName: 'NAME',
     editable: false,
     align: 'left',
     flex: 2,
-    minWidth: 140,
+    minWidth: 190,
+  },
+  {
+    field: 'status',
+    headerName: 'STATUS',
+    headerAlign: 'left',
+    editable: false,
+    flex: 1,
+    minWidth: 160,
+    renderCell: (params) => {
+      const status = params.value.toLowerCase();
+      let color = '';
+      let icon = '';
+
+      if (status === 'approved') {
+        color = 'success.main';
+        icon = 'ic:baseline-check-circle';
+      } else if (status === 'error') {
+        color = 'warning.main';
+        icon = 'ic:baseline-error';
+      } else if (status === 'disable') {
+        color = 'error.main';
+        icon = 'ic:baseline-cancel';
+      }
+
+      return (
+        <Stack alignItems="center" spacing={0.8} height={1}>
+          <IconifyIcon icon={icon} color={color} fontSize="h5.fontSize" />
+          <Typography variant="body2" fontWeight={600}>
+            {params.value}
+          </Typography>
+        </Stack>
+      );
+    },
   },
   {
     field: 'date',
-    headerName: 'Date',
-    editable: false,
-    align: 'left',
-    flex: 2,
-    minWidth: 160,
-  },
-  {
-    field: 'amount',
-    headerName: 'Amount',
-    editable: false,
-    align: 'left',
-    flex: 2,
-    minWidth: 120,
-  },
-  {
-    field: 'paymentMethod',
-    headerName: 'Payment Method',
+    headerName: 'DATE',
     editable: false,
     align: 'left',
     flex: 2,
     minWidth: 150,
   },
   {
-    field: 'status',
-    headerName: 'Status',
-    headerAlign: 'center',
+    field: 'progress',
+    headerName: 'PROGRESS',
     editable: false,
-    flex: 1,
-    minWidth: 140,
+    align: 'left',
+    flex: 2,
+    minWidth: 220,
     renderCell: (params) => {
-      const color =
-        params.value === 'Pending'
-          ? 'warning'
-          : params.value === 'Completed'
-            ? 'success'
-            : params.value === 'Failed'
-              ? 'error'
-              : 'info';
       return (
-        <Stack direction="column" alignItems="center" justifyContent="center" height={1}>
-          <Chip label={params.value} size="small" color={color} />
+        <Stack alignItems="center" pr={5} height={1} width={1}>
+          <Typography variant="body2" fontWeight={600} minWidth={40}>
+            {params.value}%
+          </Typography>
+          <LinearProgress
+            variant="determinate"
+            value={params.value}
+            sx={{
+              width: 1,
+              height: 6,
+              borderRadius: 10,
+              bgcolor: 'info.dark',
+              '& .MuiLinearProgress-bar': {
+                borderRadius: 10,
+              },
+            }}
+          />
         </Stack>
       );
     },
   },
   {
+    field: 'quantity',
+    headerName: 'QUANTITY',
+    editable: false,
+    align: 'left',
+    flex: 2,
+    minWidth: 100,
+  },
+  {
     field: 'balance',
-    headerName: 'Balance',
+    headerName: 'BALANCE',
     headerAlign: 'right',
     align: 'right',
     editable: false,
@@ -147,7 +180,7 @@ const DataTable = ({ searchText }: TaskOverviewTableProps) => {
         pagination: DataGridFooter,
       }}
       checkboxSelection
-      pageSizeOptions={[5]}
+      pageSizeOptions={[4]}
     />
   );
 };
