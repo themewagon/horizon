@@ -1,10 +1,10 @@
 import { Card, Stack, Box, Typography, CardMedia } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import customShadows from 'theme/shadows';
-import { CardProps } from 'data/cardsData';
+import { NFTProps } from 'data/NFTData';
 
 interface HistoryCardProps {
-  data: CardProps;
+  data: NFTProps;
 }
 
 const HistoryCard = ({ data }: HistoryCardProps) => {

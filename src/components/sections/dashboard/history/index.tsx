@@ -1,6 +1,6 @@
 import { Box, Stack, Paper, Typography, Button } from '@mui/material';
 import HistoryCard from './HistoryCard';
-import { cardsData } from 'data/cardsData';
+import { NFTData } from 'data/NFTData';
 
 const History = () => {
   return (
@@ -13,7 +13,7 @@ const History = () => {
       </Stack>
 
       <Box mt={2}>
-        {cardsData.slice(0, 3).map((item) => (
+        {NFTData.slice(0, 3).map((item) => (
           <HistoryCard data={item} />
         ))}
       </Box>

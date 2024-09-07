@@ -1,6 +1,6 @@
 import { CardImg1, CardImg2, CardImg3, CardImg4, CardImg5, CardImg6 } from './images';
 
-export interface CardProps {
+export interface NFTProps {
   id: string | number;
   title: string;
   artist: string;
@@ -10,7 +10,7 @@ export interface CardProps {
   avatars?: string[];
 }
 
-export const cardsData: CardProps[] = [
+export const NFTData: NFTProps[] = [
   {
     id: 1,
     title: 'Colorful Heaven',
