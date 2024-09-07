@@ -35,6 +35,8 @@ import PaginationItem from './components/pagination/PaginationItem';
 import DataGrid from './components/data-grid/DataGrid';
 import Avatar from './components/data-display/Avatar';
 import AvatarGroup from './components/data-display/AvatarGroup';
+import Card from './components/cards/Card';
+import CardMedia from './components/cards/CardMedia';
 
 export const theme = createTheme({
   palette,
@@ -79,6 +81,8 @@ export const theme = createTheme({
     MuiAppBar: AppBar,
     MuiDrawer: Drawer,
     MuiLink: Link,
+    MuiCard: Card,
+    MuiCardMedia: CardMedia,
     MuiAvatar: Avatar,
     MuiDataGrid: DataGrid,
     MuiAvatarGroup: AvatarGroup,
