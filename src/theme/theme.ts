@@ -37,6 +37,7 @@ import Avatar from './components/data-display/Avatar';
 import AvatarGroup from './components/data-display/AvatarGroup';
 import Card from './components/cards/Card';
 import CardMedia from './components/cards/CardMedia';
+import CardContent from './components/cards/CardContent';
 
 export const theme = createTheme({
   palette,
@@ -83,6 +84,7 @@ export const theme = createTheme({
     MuiLink: Link,
     MuiCard: Card,
     MuiCardMedia: CardMedia,
+    MuiCardContent: CardContent,
     MuiAvatar: Avatar,
     MuiDataGrid: DataGrid,
     MuiAvatarGroup: AvatarGroup,

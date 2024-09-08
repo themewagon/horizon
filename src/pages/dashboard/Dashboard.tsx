@@ -33,7 +33,7 @@ const Dashboard = () => {
       <Grid item xs={12} lg={6}>
         <History />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} lg={4}>
         <TeamMembers />
       </Grid>
       <Grid item xs={12}>
