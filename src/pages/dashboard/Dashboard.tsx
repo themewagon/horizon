@@ -5,6 +5,7 @@ import CardSecurity from 'components/sections/dashboard/card-security';
 import ComplexTable from 'components/sections/dashboard/complex-table';
 import History from 'components/sections/dashboard/history';
 import Revenue from 'components/sections/dashboard/revenue';
+import Tasks from 'components/sections/dashboard/tasks';
 import TeamMembers from 'components/sections/dashboard/team-members';
 import TotalSpent from 'components/sections/dashboard/total-spent';
 
@@ -36,8 +37,8 @@ const Dashboard = () => {
       <Grid item xs={12} lg={4}>
         <TeamMembers />
       </Grid>
-      <Grid item xs={12}>
-        Calendar
+      <Grid item xs={12} lg={4}>
+        <Tasks />
       </Grid>
       <Grid item xs={12}>
         Business Design
