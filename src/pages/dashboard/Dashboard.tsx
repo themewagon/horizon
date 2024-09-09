@@ -5,6 +5,7 @@ import Calendar from 'components/sections/dashboard/calendar';
 import CardSecurity from 'components/sections/dashboard/card-security';
 import ComplexTable from 'components/sections/dashboard/complex-table';
 import History from 'components/sections/dashboard/history';
+import PiChart from 'components/sections/dashboard/pi-chart';
 import Revenue from 'components/sections/dashboard/revenue';
 import Tasks from 'components/sections/dashboard/tasks';
 import TeamMembers from 'components/sections/dashboard/team-members';
@@ -44,8 +45,8 @@ const Dashboard = () => {
       <Grid item xs={12} lg={4}>
         <Calendar />
       </Grid>
-      <Grid item xs={12}>
-        Team Members
+      <Grid item xs={12} lg={4}>
+        <PiChart />
       </Grid>
       <Grid item xs={12}>
         Control Card Security

@@ -10,7 +10,6 @@ const Select: Components<Omit<Theme, 'components'>>['MuiSelect'] = {
         border: 'none',
         '& .MuiBox-root': {
           minWidth: 20,
-          color: theme.palette.text.disabled,
         },
       },
     }),
@@ -19,12 +18,12 @@ const Select: Components<Omit<Theme, 'components'>>['MuiSelect'] = {
       paddingRight: '0 !important',
       backgroundColor: 'transparent !important',
       fontSize: theme.typography.body2.fontSize,
-      color: theme.palette.text.primary,
+      color: theme.palette.text.disabled,
       fontWeight: 600,
       border: 'none',
     }),
     icon: ({ theme }) => ({
-      color: theme.palette.info.dark,
+      color: theme.palette.text.disabled,
     }),
   },
 };
