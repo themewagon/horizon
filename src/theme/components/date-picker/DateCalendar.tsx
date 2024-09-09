@@ -11,6 +11,21 @@ const DateCalendar: Components<Omit<Theme, 'components'>>['MuiDateCalendar'] = {
           fontWeight: 700,
         },
       },
+      '& .MuiPickersSlideTransition-root': {
+        '& .MuiDayCalendar-monthContainer': {
+          '& .MuiDayCalendar-weekContainer': {
+            '& .MuiPickersDay-today': {
+              border: 'none',
+              color: theme.palette.text.primary,
+              backgroundColor: theme.palette.info.main,
+            },
+            '& .MuiPickersDay-today.Mui-selected': {
+              color: theme.palette.info.lighter,
+              backgroundColor: theme.palette.primary.main,
+            },
+          },
+        },
+      },
     }),
   },
 };
