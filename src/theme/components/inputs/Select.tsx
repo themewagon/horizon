@@ -3,25 +3,28 @@ import { Components } from '@mui/material/styles/components';
 
 const Select: Components<Omit<Theme, 'components'>>['MuiSelect'] = {
   styleOverrides: {
-    root: {
-      padding: 0,
+    root: ({ theme }) => ({
+      padding: theme.spacing(0, 1.25),
+      borderRadius: theme.shape.borderRadius * 4.5,
       '&.MuiInputBase-root': {
-        backgroundColor: 'transparent !important',
         border: 'none',
+        '& .MuiBox-root': {
+          minWidth: 20,
+          color: theme.palette.text.disabled,
+        },
       },
-    },
+    }),
     select: ({ theme }) => ({
       padding: theme.spacing(1),
-      paddingLeft: theme.spacing(1.25),
       paddingRight: '0 !important',
       backgroundColor: 'transparent !important',
       fontSize: theme.typography.body2.fontSize,
-      color: theme.palette.text.disabled,
+      color: theme.palette.text.primary,
       fontWeight: 600,
+      border: 'none',
     }),
     icon: ({ theme }) => ({
-      color: theme.palette.text.disabled,
-      fontSize: theme.typography.h4.fontSize,
+      color: theme.palette.info.dark,
     }),
   },
 };

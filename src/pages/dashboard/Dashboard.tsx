@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material';
 import Analytics from 'components/sections/dashboard/analytics';
 import BusinessDesign from 'components/sections/dashboard/business-design';
+import Calendar from 'components/sections/dashboard/calendar';
 import CardSecurity from 'components/sections/dashboard/card-security';
 import ComplexTable from 'components/sections/dashboard/complex-table';
 import History from 'components/sections/dashboard/history';
@@ -40,8 +41,8 @@ const Dashboard = () => {
       <Grid item xs={12} lg={4}>
         <Tasks />
       </Grid>
-      <Grid item xs={12}>
-        Business Design
+      <Grid item xs={12} lg={4}>
+        <Calendar />
       </Grid>
       <Grid item xs={12}>
         Team Members

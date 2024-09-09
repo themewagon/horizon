@@ -38,6 +38,7 @@ import AvatarGroup from './components/data-display/AvatarGroup';
 import Card from './components/cards/Card';
 import CardMedia from './components/cards/CardMedia';
 import CardContent from './components/cards/CardContent';
+import DateCalendar from './components/date-picker/DateCalendar';
 
 export const theme = createTheme({
   palette,
@@ -88,6 +89,7 @@ export const theme = createTheme({
     MuiAvatar: Avatar,
     MuiDataGrid: DataGrid,
     MuiAvatarGroup: AvatarGroup,
+    MuiDateCalendar: DateCalendar,
     MuiMonthCalendar: MonthCalendar,
     MuiYearCalendar: YearCalendar,
     MuiPaginationItem: PaginationItem,
