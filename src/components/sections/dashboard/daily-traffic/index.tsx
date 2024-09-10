@@ -1,12 +1,14 @@
-import { Paper, Stack, Box, Typography } from '@mui/material';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
 import DailyTrafficChart from './DailyTrafficChart';
 
 const DailyTraffic = () => {
   return (
-    <Paper>
+    <Paper sx={{ height: 350 }}>
       <Stack alignItems="flex-start" justifyContent="space-between">
-        <Box>
+        <div>
           <Typography variant="body2" color="text.disabled" fontWeight={500}>
             Daily Traffic
           </Typography>
@@ -16,7 +18,7 @@ const DailyTraffic = () => {
               Visitors
             </Typography>
           </Typography>
-        </Box>
+        </div>
         <Stack alignItems="center" spacing={0.25}>
           <IconifyIcon
             icon="ic:baseline-arrow-drop-up"

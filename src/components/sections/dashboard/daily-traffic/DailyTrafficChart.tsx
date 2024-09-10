@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import { SxProps, useTheme } from '@mui/material';
 import * as echarts from 'echarts/core';
-import ReactEchart from 'components/base/ReactEchart';
 import { BarChart } from 'echarts/charts';
+import ReactEchart from 'components/base/ReactEchart';
 import { TooltipComponent, GridComponent, AxisPointerComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 
@@ -72,14 +72,9 @@ const DailyTrafficChart = ({ data, ...rest }: DailyTrafficChartProps) => {
           itemStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
               { offset: 0, color: theme.palette.primary.main },
-              { offset: 1, color: 'rgba(33, 150, 243, 0.5)' },
+              { offset: 1, color: 'rgba(67, 24, 255, 0.2)' },
             ]),
             borderRadius: [10, 10, 0, 0],
-          },
-          emphasis: {
-            itemStyle: {
-              color: theme.palette.primary.main,
-            },
           },
         },
       ],
