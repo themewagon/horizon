@@ -1,12 +1,18 @@
 import { SxProps, useTheme } from '@mui/material';
 import ReactEchart from 'components/base/ReactEchart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import * as echarts from 'echarts';
+import * as echarts from 'echarts/core';
+import { PieChart } from 'echarts/charts';
+import { TooltipComponent } from 'echarts/components';
+import { CanvasRenderer } from 'echarts/renderers';
+import { PiChartData } from 'data/piChartData';
 
 interface PiChartProps {
   sx?: SxProps;
   chartRef: React.RefObject<EChartsReactCore>;
 }
+
+echarts.use([PieChart, TooltipComponent, CanvasRenderer]);
 
 const PiChart = ({ chartRef, ...rest }: PiChartProps) => {
   const theme = useTheme();
@@ -20,11 +26,15 @@ const PiChart = ({ chartRef, ...rest }: PiChartProps) => {
       {
         name: '',
         type: 'pie',
-        radius: '50%',
-        data: [
-          { value: 65, name: 'Your Files', itemStyle: { color: theme.palette.primary.main } },
-          { value: 35, name: 'System', itemStyle: { color: theme.palette.secondary.main } },
-        ],
+        radius: '80%',
+        data: PiChartData.map((item) => {
+          return {
+            ...item,
+            itemStyle: {
+              color: item.id === 1 ? theme.palette.primary.main : theme.palette.secondary.main,
+            },
+          };
+        }),
         emphasis: {
           label: {
             show: false,

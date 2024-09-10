@@ -1,23 +1,19 @@
-import { Paper, Box, Stack, Typography, MenuItem, ButtonBase } from '@mui/material';
+import { useState, useRef } from 'react';
+import { useTheme } from '@mui/material';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import Divider from '@mui/material/Divider';
+import MenuItem from '@mui/material/MenuItem';
+import Typography from '@mui/material/Typography';
+import ButtonBase from '@mui/material/ButtonBase';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import { useState, useRef } from 'react';
+import { PiChartDataProps } from 'data/piChartData';
+import { PiChartData } from 'data/piChartData';
 import customShadows from 'theme/shadows';
 import PiChart from './PiChart';
-import { useTheme } from '@mui/material';
-
-interface PiChartDataProps {
-  id: number | string;
-  value: number;
-  name: string;
-  visible: boolean;
-}
-
-const PiChartData: PiChartDataProps[] = [
-  { id: 1, value: 65, name: 'Your Files', visible: true },
-  { id: 2, value: 35, name: 'System', visible: true },
-];
 
 const YourPiChart = () => {
   const [timeline, setTimeline] = useState('monthly');
@@ -61,7 +57,7 @@ const YourPiChart = () => {
   };
 
   return (
-    <Paper>
+    <Paper sx={{ py: 2.5, height: 350 }}>
       <Stack alignItems="center" justifyContent="space-between">
         <Typography variant="body1" fontWeight={700}>
           Your Pie Chart
@@ -87,43 +83,47 @@ const YourPiChart = () => {
         </FormControl>
       </Stack>
 
-      <PiChart chartRef={chartRef} />
+      <PiChart chartRef={chartRef} sx={{ height: '180px !important' }} />
 
-      <Stack
-        px={2}
-        pt={3}
-        pb={2.5}
-        alignItems="center"
-        borderRadius={4}
-        boxShadow={customShadows[1]}
-      >
+      <Stack px={2} py={1} alignItems="center" borderRadius={4} boxShadow={customShadows[1]}>
         {chartData.map((item) => (
-          <Stack
-            component={ButtonBase}
-            spacing={0.75}
-            alignItems="flex-start"
-            justifyContent="center"
-            width="50%"
-            onClick={() => toggleVisibility(item.name)}
-            disableRipple
-          >
-            <Box
-              height={10}
-              width={10}
-              borderRadius="50%"
-              bgcolor={
-                item.visible ? (item.id === 1 ? 'primary.main' : 'secondary.main') : 'neutral.light'
-              }
-            />
-            <Box mt={-0.55}>
-              <Typography variant="caption" color="text.disabled">
-                {item.name}
-              </Typography>
-              <Typography variant="h6" textAlign="left">
-                {item.value}%
-              </Typography>
-            </Box>
-          </Stack>
+          <>
+            <Stack
+              key={item.id}
+              component={ButtonBase}
+              width="50%"
+              mt={0.75}
+              spacing={0.75}
+              alignItems="flex-start"
+              justifyContent="center"
+              onClick={() => toggleVisibility(item.name)}
+              disableRipple
+            >
+              <Box
+                height={10}
+                width={10}
+                borderRadius="50%"
+                bgcolor={
+                  item.visible
+                    ? item.id === 1
+                      ? 'primary.main'
+                      : 'secondary.main'
+                    : 'neutral.light'
+                }
+              />
+              <Box mt={-0.55}>
+                <Typography variant="caption" color="text.disabled">
+                  {item.name}
+                </Typography>
+                <Typography variant="h6" textAlign="left">
+                  {item.value}%
+                </Typography>
+              </Box>
+            </Stack>
+            {item.id !== 2 && (
+              <Divider sx={{ height: 50 }} orientation="vertical" variant="middle" flexItem />
+            )}
+          </>
         ))}
       </Stack>
     </Paper>
