@@ -1,7 +1,10 @@
-import { Card, Stack, Box, Typography, CardMedia } from '@mui/material';
+import { NFTProps } from 'data/NFTData';
+import Stack from '@mui/material/Stack';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
 import customShadows from 'theme/shadows';
-import { NFTProps } from 'data/NFTData';
 
 interface HistoryCardProps {
   data: NFTProps;
@@ -9,23 +12,25 @@ interface HistoryCardProps {
 
 const HistoryCard = ({ data }: HistoryCardProps) => {
   return (
-    <Card sx={{ mb: 0.75, bgcolor: 'transparent', '&:hover': { boxShadow: customShadows[1] } }}>
+    <Card
+      sx={{ p: 1.5, mb: 0.875, bgcolor: 'transparent', '&:hover': { boxShadow: customShadows[1] } }}
+    >
       <Stack alignItems="center" justifyContent="space-between">
         <Stack spacing={2} alignItems="center">
           <CardMedia
             component="img"
             src={data.image}
-            sx={{ height: 66, width: 66 }}
-            alt="card_img_1"
+            sx={{ height: 60, width: 60 }}
+            alt="card_img"
           />
-          <Box>
+          <div>
             <Typography mb={-0.45} variant="body2" fontWeight={700} noWrap>
               {data.title}
             </Typography>
             <Typography mt={-0.45} variant="caption" color="text.disabled" fontWeight={400} noWrap>
               By {data.artist}
             </Typography>
-          </Box>
+          </div>
         </Stack>
 
         <Stack spacing={0.35} alignItems="center">

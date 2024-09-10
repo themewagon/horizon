@@ -1,11 +1,15 @@
-import { Box, Stack, Paper, Typography, Button } from '@mui/material';
-import HistoryCard from './HistoryCard';
 import { NFTData } from 'data/NFTData';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import HistoryCard from './HistoryCard';
 
 const History = () => {
   return (
-    <Box component={Paper} p={2} height={390}>
-      <Stack alignItems="center" justifyContent="space-between">
+    <Paper sx={{ px: 1.5, py: 2, height: 350 }}>
+      <Stack px={2} alignItems="center" justifyContent="space-between">
         <Typography variant="h5">History</Typography>
         <Button variant="contained" color="secondary" size="small">
           See all
@@ -17,7 +21,7 @@ const History = () => {
           <HistoryCard data={item} />
         ))}
       </Box>
-    </Box>
+    </Paper>
   );
 };
 
