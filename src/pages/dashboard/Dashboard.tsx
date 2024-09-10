@@ -10,6 +10,7 @@ import Revenue from 'components/sections/dashboard/revenue';
 import Tasks from 'components/sections/dashboard/tasks';
 import TeamMembers from 'components/sections/dashboard/team-members';
 import TotalSpent from 'components/sections/dashboard/total-spent';
+import DailyTraffic from 'components/sections/dashboard/daily-traffic';
 
 const Dashboard = () => {
   return (
@@ -48,8 +49,8 @@ const Dashboard = () => {
       <Grid item xs={12} lg={4}>
         <PiChart />
       </Grid>
-      <Grid item xs={12}>
-        Control Card Security
+      <Grid item xs={12} lg={4}>
+        <DailyTraffic />
       </Grid>
       <Grid item xs={12}>
         Starbucks
