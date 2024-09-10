@@ -16,7 +16,7 @@ const HistoryCard = ({ data }: HistoryCardProps) => {
       sx={{ p: 1.5, mb: 0.875, bgcolor: 'transparent', '&:hover': { boxShadow: customShadows[1] } }}
     >
       <Stack alignItems="center" justifyContent="space-between">
-        <Stack spacing={2} alignItems="center">
+        <Stack spacing={2} alignItems="center" minWidth={190}>
           <CardMedia
             component="img"
             src={data.image}
