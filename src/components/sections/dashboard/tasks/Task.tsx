@@ -1,8 +1,9 @@
-import { Stack, IconButton } from '@mui/material';
-import IconifyIcon from 'components/base/IconifyIcon';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
+import Stack from '@mui/material/Stack';
 import Checkbox from '@mui/material/Checkbox';
+import FormGroup from '@mui/material/FormGroup';
+import IconButton from '@mui/material/IconButton';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import IconifyIcon from 'components/base/IconifyIcon';
 import { TaskProps } from 'data/tasksData';
 
 interface TaskItemProps {
