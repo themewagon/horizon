@@ -9,7 +9,7 @@ import RevenueChart from './RevenueChart';
 
 const Revenue = () => {
   return (
-    <Box component={Paper} height={345}>
+    <Box component={Paper} height={350}>
       <Stack justifyContent="space-between">
         <Typography variant="h4">Weekly Revenue</Typography>
         <Stack
@@ -25,7 +25,7 @@ const Revenue = () => {
         </Stack>
       </Stack>
 
-      <RevenueChart data={revenueChartData} sx={{ height: '260px !important' }} />
+      <RevenueChart data={revenueChartData} sx={{ height: '265px !important' }} />
     </Box>
   );
 };
