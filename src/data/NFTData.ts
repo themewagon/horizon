@@ -1,4 +1,16 @@
-import { CardImg1, CardImg2, CardImg3, CardImg4, CardImg5, CardImg6 } from './images';
+import {
+  Avatar1,
+  Avatar2,
+  Avatar3,
+  Avatar4,
+  Avatar5,
+  CardImg1,
+  CardImg2,
+  CardImg3,
+  CardImg4,
+  CardImg5,
+  CardImg6,
+} from './images';
 
 export interface NFTProps {
   id: string | number;
@@ -7,7 +19,8 @@ export interface NFTProps {
   image: string;
   price: string;
   timeAgo: string;
-  avatars?: string[];
+  totalMembers: number;
+  avatars: string[];
 }
 
 export const NFTData: NFTProps[] = [
@@ -18,6 +31,8 @@ export const NFTData: NFTProps[] = [
     image: CardImg1,
     price: '1.30 ETH',
     timeAgo: '30s',
+    totalMembers: 21,
+    avatars: [Avatar1, Avatar2, Avatar3],
   },
   {
     id: 2,
@@ -26,6 +41,8 @@ export const NFTData: NFTProps[] = [
     image: CardImg2,
     price: '0.91 ETH',
     timeAgo: '58s',
+    totalMembers: 16,
+    avatars: [Avatar5, Avatar3],
   },
   {
     id: 3,
@@ -34,6 +51,8 @@ export const NFTData: NFTProps[] = [
     image: CardImg3,
     price: '2.82 ETH',
     timeAgo: '12m',
+    totalMembers: 12,
+    avatars: [Avatar3, Avatar1, Avatar2],
   },
   {
     id: 4,
@@ -42,6 +61,8 @@ export const NFTData: NFTProps[] = [
     image: CardImg4,
     price: '2.30 ETH',
     timeAgo: '15m',
+    totalMembers: 28,
+    avatars: [Avatar2, Avatar4, Avatar5, Avatar3],
   },
   {
     id: 5,
@@ -50,6 +71,8 @@ export const NFTData: NFTProps[] = [
     image: CardImg5,
     price: '0.56 ETH',
     timeAgo: '20m',
+    totalMembers: 19,
+    avatars: [Avatar3, Avatar4, Avatar1],
   },
   {
     id: 6,
@@ -58,5 +81,7 @@ export const NFTData: NFTProps[] = [
     image: CardImg6,
     price: '6.58 ETH',
     timeAgo: '35m',
+    avatars: [Avatar1, Avatar5],
+    totalMembers: 24,
   },
 ];

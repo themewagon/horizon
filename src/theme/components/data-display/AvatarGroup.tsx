@@ -5,8 +5,6 @@ const AvatarGroup: Components<Omit<Theme, 'components'>>['MuiAvatarGroup'] = {
   styleOverrides: {
     root: {},
     avatar: ({ theme }) => ({
-      width: 36,
-      height: 36,
       border: 3,
       marginLeft: theme.spacing(-2),
       borderStyle: 'solid',
