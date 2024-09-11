@@ -1,11 +1,15 @@
-import { Box, Stack, Paper, Typography, ButtonBase } from '@mui/material';
-import IconifyIcon from 'components/base/IconifyIcon';
 import { teamMembersData } from 'data/teamMembersData';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import ButtonBase from '@mui/material/ButtonBase';
+import IconifyIcon from 'components/base/IconifyIcon';
 import MemberCard from './MemberCard';
 
 const TeamMembers = () => {
   return (
-    <Box component={Paper} p={2.5} height={390}>
+    <Box component={Paper} p={3} height={390}>
       <Stack alignItems="center" justifyContent="space-between">
         <Typography variant="h5">Team members</Typography>
         <Stack
@@ -21,7 +25,7 @@ const TeamMembers = () => {
         </Stack>
       </Stack>
 
-      <Box mt={4}>
+      <Box mt={3}>
         {teamMembersData.slice(0, 3).map((item) => (
           <MemberCard data={item} />
         ))}

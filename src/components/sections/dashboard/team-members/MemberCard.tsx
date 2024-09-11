@@ -1,16 +1,14 @@
-import {
-  Card,
-  Stack,
-  Typography,
-  CardContent,
-  Link,
-  Avatar,
-  CardActions,
-  IconButton,
-} from '@mui/material';
-import IconifyIcon from 'components/base/IconifyIcon';
 import { TeamMemberProps } from 'data/teamMembersData';
 import customShadows from 'theme/shadows';
+import Link from '@mui/material/Link';
+import Card from '@mui/material/Card';
+import Stack from '@mui/material/Stack';
+import Avatar from '@mui/material/Avatar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import IconifyIcon from 'components/base/IconifyIcon';
 
 interface MemberCardProps {
   data: TeamMemberProps;
@@ -18,7 +16,7 @@ interface MemberCardProps {
 
 const MemberCard = ({ data }: MemberCardProps) => {
   return (
-    <Card sx={{ mb: 2.5, py: 1.5, borderRadius: 3.5, boxShadow: customShadows[1] }}>
+    <Card sx={{ mb: 2.5, py: 1.75, borderRadius: 3.5, boxShadow: customShadows[1] }}>
       <Stack alignItems="center" justifyContent="space-between">
         <Stack spacing={1.5} alignItems="center">
           <Avatar
@@ -26,13 +24,13 @@ const MemberCard = ({ data }: MemberCardProps) => {
             component={Link}
             href="#!"
             sx={{
-              height: 48,
-              width: 48,
+              height: 52,
+              width: 52,
               bgcolor: 'primary.main',
             }}
           />
           <CardContent>
-            <Typography mb={-0.25} variant="body2" fontWeight={700} noWrap>
+            <Typography mb={-0.25} variant="body1" fontWeight={700} noWrap>
               {data.name}
             </Typography>
             <Typography mt={-0.25} variant="caption" color="text.disabled" fontWeight={400} noWrap>
@@ -41,7 +39,7 @@ const MemberCard = ({ data }: MemberCardProps) => {
           </CardContent>
         </Stack>
 
-        <CardActions>
+        <CardActions sx={{ mr: -1.5 }}>
           <IconButton
             edge="start"
             color="inherit"
