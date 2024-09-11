@@ -1,9 +1,11 @@
+import { useRef } from 'react';
 import { NFTProps } from 'data/NFTData';
 import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
+import useResizeObserver from 'hooks/useResizeObserver';
 import customShadows from 'theme/shadows';
 
 interface HistoryCardProps {
@@ -11,8 +13,14 @@ interface HistoryCardProps {
 }
 
 const HistoryCard = ({ data }: HistoryCardProps) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const containerSize = useResizeObserver(containerRef);
+
+  console.log(containerSize);
+
   return (
     <Card
+      ref={containerRef}
       sx={{ p: 1.5, mb: 0.875, bgcolor: 'transparent', '&:hover': { boxShadow: customShadows[1] } }}
     >
       <Stack alignItems="center" justifyContent="space-between">
@@ -40,7 +48,11 @@ const HistoryCard = ({ data }: HistoryCardProps) => {
           </Typography>
         </Stack>
 
-        <Typography variant="body2" color="text.disabled">
+        <Typography
+          variant="body2"
+          color="text.disabled"
+          display={containerSize > 360 ? 'flex' : 'none'}
+        >
           {data.timeAgo} ago
         </Typography>
       </Stack>
