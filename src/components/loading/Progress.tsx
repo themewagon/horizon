@@ -1,4 +1,6 @@
-import { CircularProgress, Stack, StackOwnProps } from '@mui/material';
+import { StackOwnProps } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Progress = (props: StackOwnProps) => {
   return (

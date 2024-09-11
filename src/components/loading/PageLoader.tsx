@@ -1,4 +1,7 @@
-import { Box, LinearProgress, Stack, StackOwnProps } from '@mui/material';
+import { StackOwnProps } from '@mui/material';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import LinearProgress from '@mui/material/LinearProgress';
 
 const PageLoader = (props: StackOwnProps) => {
   return (
