@@ -1,10 +1,14 @@
 import { useState } from 'react';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import dayjs, { Dayjs } from 'dayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { Stack, Paper, MenuItem, Select, SelectChangeEvent, FormControl } from '@mui/material';
-import dayjs, { Dayjs } from 'dayjs';
 import { PickersCalendarHeaderProps } from '@mui/x-date-pickers';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
 import IconifyIcon from 'components/base/IconifyIcon';
 
 interface CalendarHeaderProps {
@@ -28,7 +32,7 @@ const months = [
   'December',
 ];
 
-const years = Array.from({ length: 200 }, (_, i) => dayjs().year() - 100 + i);
+const years = Array.from({ length: 100 }, (_, i) => dayjs().year() - 50 + i);
 
 const CalendarHeader = ({ currentMonth, onMonthChange, onYearChange }: CalendarHeaderProps) => {
   const handleMonthChange = (event: SelectChangeEvent<number>) => {
@@ -95,6 +99,11 @@ const CalendarHeader = ({ currentMonth, onMonthChange, onYearChange }: CalendarH
         <Select
           value={currentMonth.year()}
           onChange={handleYearChange}
+          sx={(theme) => ({
+            '& .MuiSelect-select': {
+              color: `${theme.palette.text.primary} !important`,
+            },
+          })}
           IconComponent={() => (
             <IconifyIcon icon="ic:round-keyboard-arrow-down" fontSize="h3.fontSize" />
           )}
@@ -122,7 +131,7 @@ const Calendar = () => {
   };
 
   return (
-    <Paper sx={{ px: 0, height: 390 }}>
+    <Paper sx={{ p: 2, height: 350 }}>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DateCalendar
           slots={{
