@@ -33,7 +33,7 @@ export const NFTData: NFTProps[] = [
     artist: 'Nick Wilson',
     image: CardImg3,
     price: '2.82 ETH',
-    timeAgo: '1m',
+    timeAgo: '12m',
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export const NFTData: NFTProps[] = [
     artist: 'Peter Will',
     image: CardImg4,
     price: '2.30 ETH',
-    timeAgo: '1m',
+    timeAgo: '15m',
   },
   {
     id: 5,
@@ -49,7 +49,7 @@ export const NFTData: NFTProps[] = [
     artist: 'Will Smith',
     image: CardImg5,
     price: '0.56 ETH',
-    timeAgo: '2m',
+    timeAgo: '20m',
   },
   {
     id: 6,
@@ -57,6 +57,6 @@ export const NFTData: NFTProps[] = [
     artist: 'Manny Gates',
     image: CardImg6,
     price: '6.58 ETH',
-    timeAgo: '3m',
+    timeAgo: '35m',
   },
 ];
