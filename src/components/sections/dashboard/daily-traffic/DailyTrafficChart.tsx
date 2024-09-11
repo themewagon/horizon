@@ -66,7 +66,7 @@ const DailyTrafficChart = ({ data, ...rest }: DailyTrafficChartProps) => {
         {
           name: 'Traffic',
           type: 'bar',
-          barWidth: '30%',
+          barWidth: '28%',
           showBackground: false,
           data,
           itemStyle: {
