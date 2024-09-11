@@ -1,10 +1,9 @@
-import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 const Sales = () => {
   return (
-    <Box component={Paper} px={2.5} py={1.5} height={100}>
+    <Paper sx={{ px: 2.5, py: 1.5, height: 100 }}>
       <Typography variant="body2" color="text.disabled">
         Sales
       </Typography>
@@ -15,7 +14,7 @@ const Sales = () => {
         </Typography>{' '}
         since last month
       </Typography>
-    </Box>
+    </Paper>
   );
 };
 

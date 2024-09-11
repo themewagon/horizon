@@ -1,9 +1,9 @@
 import Grid from '@mui/material/Grid';
 import Earnings from './Earnings';
-import Spend from './Spend';
 import Sales from './Sales';
-import Balance from './Balance';
+import Spend from './Spend';
 import Tasks from './Tasks';
+import Balance from './Balance';
 import Projects from './Projects';
 
 const Analytics = () => {
