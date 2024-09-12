@@ -51,6 +51,7 @@ const palette: PaletteOptions = {
   secondary: {
     light: skyblue[300],
     main: skyblue[500],
+    dark: indigo[300],
   },
   info: {
     lighter: white[100],

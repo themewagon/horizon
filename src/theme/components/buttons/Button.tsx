@@ -39,7 +39,7 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
       fontWeight: 600,
     }),
     startIcon: {
-      marginRight: 10,
+      marginRight: 6,
     },
     endIcon: {
       marginLeft: 6,
