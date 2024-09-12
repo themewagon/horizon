@@ -25,36 +25,36 @@ const Dashboard = () => {
       <Grid item xs={12} md={6}>
         <Revenue />
       </Grid>
-      {/* <Grid item xs={12} xl={3}>
+      <Grid item xs={12} md={6} lg={4} xl={3}>
         <CardSecurity />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} md={6} lg={4} xl={3}>
         <Tasks />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} md={6} lg={4} xl={3}>
         <DailyTraffic />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} md={6} lg={4} xl={3}>
         <PiChart />
       </Grid>
-      <Grid item xs={12} xl={6}>
+      <Grid item xs={12} lg={8} xl={6}>
         <TrendingNFTs />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} md={6} lg={4} xl={3}>
         <History />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} md={6} lg={4} xl={3}>
         <Calendar />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} md={6} lg={4} xl={3}>
         <BusinessDesign />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} md={6} lg={4} xl={3}>
         <TeamMembers />
       </Grid>
-      <Grid item xs={12} xl={6}>
+      <Grid item xs={12} lg={8} xl={6}>
         <ComplexTable />
-      </Grid> */}
+      </Grid>
     </Grid>
   );
 };
