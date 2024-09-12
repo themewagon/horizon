@@ -6,6 +6,7 @@ import { PieChart } from 'echarts/charts';
 import { TooltipComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 import { PiChartData } from 'data/piChartData';
+import { useMemo } from 'react';
 
 interface PiChartProps {
   sx?: SxProps;
@@ -17,40 +18,43 @@ echarts.use([PieChart, TooltipComponent, CanvasRenderer]);
 const PiChart = ({ chartRef, ...rest }: PiChartProps) => {
   const theme = useTheme();
 
-  const option = {
-    tooltip: {
-      trigger: 'item',
-      formatter: '{b}: {d}%',
-    },
-    series: [
-      {
-        name: '',
-        type: 'pie',
-        radius: '80%',
-        data: PiChartData.map((item) => {
-          return {
-            ...item,
-            itemStyle: {
-              color: item.id === 1 ? theme.palette.primary.main : theme.palette.secondary.main,
+  const option = useMemo(
+    () => ({
+      tooltip: {
+        trigger: 'item',
+        formatter: '{b}: {d}%',
+      },
+      series: [
+        {
+          name: '',
+          type: 'pie',
+          radius: '80%',
+          data: PiChartData.map((item) => {
+            return {
+              ...item,
+              itemStyle: {
+                color: item.id === 1 ? theme.palette.primary.main : theme.palette.secondary.main,
+              },
+            };
+          }),
+          emphasis: {
+            label: {
+              show: false,
             },
-          };
-        }),
-        emphasis: {
+            itemStyle: {
+              shadowBlur: 5,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)',
+            },
+          },
           label: {
             show: false,
           },
-          itemStyle: {
-            shadowBlur: 5,
-            shadowOffsetX: 0,
-            shadowColor: 'rgba(0, 0, 0, 0.5)',
-          },
         },
-        label: {
-          show: false,
-        },
-      },
-    ],
-  };
+      ],
+    }),
+    [theme],
+  );
 
   return <ReactEchart ref={chartRef} echarts={echarts} option={option} {...rest} />;
 };
