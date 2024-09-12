@@ -19,7 +19,7 @@ const BusinessDesign = () => {
       direction="column"
       justifyContent="space-between"
       overflow="hidden"
-      height={390}
+      height={{ xs: 390, lg: 350, xl: 390 }}
       p={0}
     >
       <Stack p={3.5} pb={1} spacing={1.5} alignItems="center">
