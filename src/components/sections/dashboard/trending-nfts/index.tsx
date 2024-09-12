@@ -80,7 +80,7 @@ const TrendingNFTs = () => {
 
       <ReactSwiper
         slidesPerView={
-          containerSize > 1440 ? 4 : containerSize > 1024 ? 3 : containerSize > 720 ? 2 : 1
+          containerSize > 1440 ? 4 : containerSize > 1024 ? 3 : containerSize > 600 ? 2 : 1
         }
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
