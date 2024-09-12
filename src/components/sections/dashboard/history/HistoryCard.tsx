@@ -1,12 +1,13 @@
 import { useRef } from 'react';
 import { NFTProps } from 'data/NFTData';
-import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
+import Stack from '@mui/material/Stack';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
 import useResizeObserver from 'hooks/useResizeObserver';
 import customShadows from 'theme/shadows';
+import Link from '@mui/material/Link';
 
 interface HistoryCardProps {
   data: NFTProps;
@@ -32,7 +33,15 @@ const HistoryCard = ({ data }: HistoryCardProps) => {
             alt="card_img"
           />
           <div>
-            <Typography mb={-0.45} variant="body2" fontWeight={700} noWrap>
+            <Typography
+              component={Link}
+              href={data.link}
+              mb={-0.45}
+              variant="body2"
+              fontWeight={700}
+              display="block"
+              noWrap
+            >
               {data.title}
             </Typography>
             <Typography mt={-0.45} variant="caption" color="text.disabled" fontWeight={400} noWrap>

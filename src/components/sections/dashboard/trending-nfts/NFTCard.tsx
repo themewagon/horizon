@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
+import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -39,7 +40,13 @@ const NFTCard = ({ data }: NFTCardProps) => {
       <CardContent sx={{ mt: 1.5 }}>
         <Stack alignItems="center" justifyContent="space-between">
           <div>
-            <Typography variant="h6" color="text.primary">
+            <Typography
+              component={Link}
+              href={data.link}
+              variant="h6"
+              color="text.primary"
+              display="block"
+            >
               {data.title}
             </Typography>
             <Typography variant="subtitle2" color="text.disabled">

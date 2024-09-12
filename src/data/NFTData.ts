@@ -19,6 +19,7 @@ export interface NFTProps {
   image: string;
   price: string;
   timeAgo: string;
+  link: string;
   totalMembers: number;
   avatars: string[];
 }
@@ -31,6 +32,7 @@ export const NFTData: NFTProps[] = [
     image: CardImg1,
     price: '1.30 ETH',
     timeAgo: '30s',
+    link: '#!',
     totalMembers: 21,
     avatars: [Avatar1, Avatar2, Avatar3],
   },
@@ -41,6 +43,7 @@ export const NFTData: NFTProps[] = [
     image: CardImg2,
     price: '0.91 ETH',
     timeAgo: '58s',
+    link: '#!',
     totalMembers: 16,
     avatars: [Avatar5, Avatar3],
   },
@@ -51,6 +54,7 @@ export const NFTData: NFTProps[] = [
     image: CardImg3,
     price: '2.82 ETH',
     timeAgo: '12m',
+    link: '#!',
     totalMembers: 12,
     avatars: [Avatar3, Avatar1, Avatar2],
   },
@@ -61,6 +65,7 @@ export const NFTData: NFTProps[] = [
     image: CardImg4,
     price: '2.30 ETH',
     timeAgo: '15m',
+    link: '#!',
     totalMembers: 28,
     avatars: [Avatar2, Avatar4, Avatar5, Avatar3],
   },
@@ -71,6 +76,7 @@ export const NFTData: NFTProps[] = [
     image: CardImg5,
     price: '0.56 ETH',
     timeAgo: '20m',
+    link: '#!',
     totalMembers: 19,
     avatars: [Avatar3, Avatar4, Avatar1],
   },
@@ -81,6 +87,7 @@ export const NFTData: NFTProps[] = [
     image: CardImg6,
     price: '6.58 ETH',
     timeAgo: '35m',
+    link: '#!',
     avatars: [Avatar1, Avatar5],
     totalMembers: 24,
   },
