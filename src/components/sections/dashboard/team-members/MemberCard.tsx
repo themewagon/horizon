@@ -22,7 +22,7 @@ const MemberCard = ({ data }: MemberCardProps) => {
           <Avatar
             src={data.avatar}
             component={Link}
-            href="#!"
+            href={data.link}
             sx={{
               height: 52,
               width: 52,
@@ -30,7 +30,15 @@ const MemberCard = ({ data }: MemberCardProps) => {
             }}
           />
           <CardContent>
-            <Typography mb={-0.25} variant="body1" fontWeight={700} noWrap>
+            <Typography
+              component={Link}
+              href={data.link}
+              mb={-0.25}
+              variant="body1"
+              fontWeight={700}
+              display="block"
+              noWrap
+            >
               {data.name}
             </Typography>
             <Typography mt={-0.25} variant="caption" color="text.disabled" fontWeight={400} noWrap>
