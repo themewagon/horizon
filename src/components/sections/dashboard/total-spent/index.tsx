@@ -10,7 +10,7 @@ import SpentChart from './SpentChart';
 
 const TotalSpent = () => {
   return (
-    <Box component={Paper} height={350}>
+    <Box component={Paper} height={{ xs: 450, sm: 350 }}>
       <Stack justifyContent="space-between">
         <DateSelect />
 
@@ -27,8 +27,8 @@ const TotalSpent = () => {
         </Stack>
       </Stack>
 
-      <Stack mt={1.75}>
-        <div>
+      <Stack direction={{ xs: 'column', sm: 'row' }} mt={1.75}>
+        <Box minWidth={150}>
           <Typography mt={0.35} variant="h2" color="text.primary">
             $37.5K
           </Typography>
@@ -54,9 +54,9 @@ const TotalSpent = () => {
               On track
             </Typography>
           </Stack>
-        </div>
+        </Box>
 
-        <SpentChart data={spentChartData} sx={{ flex: 1, height: '235px !important' }} />
+        <SpentChart data={spentChartData} sx={{ width: 1, height: '235px !important' }} />
       </Stack>
     </Box>
   );
