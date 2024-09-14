@@ -27,7 +27,7 @@ const TeamMembers = () => {
 
       <Box mt={3}>
         {teamMembersData.slice(0, 3).map((item) => (
-          <MemberCard data={item} />
+          <MemberCard key={item.id} data={item} />
         ))}
       </Box>
     </Box>
