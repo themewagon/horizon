@@ -18,7 +18,7 @@ const History = () => {
 
       <Box mt={2}>
         {NFTData.slice(0, 3).map((item) => (
-          <HistoryCard data={item} />
+          <HistoryCard key={item.id} data={item} />
         ))}
       </Box>
     </Paper>
