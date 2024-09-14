@@ -10,7 +10,7 @@ const AvatarGroup: Components<Omit<Theme, 'components'>>['MuiAvatarGroup'] = {
       borderStyle: 'solid',
       borderColor: theme.palette.info.lighter,
       fontSize: theme.typography.body2.fontSize,
-      '&:nth-child(1)': {
+      '&:nth-of-type(1)': {
         zIndex: 99,
         backgroundColor: theme.palette.info.dark,
       },
