@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -87,9 +87,8 @@ const YourPiChart = () => {
 
       <Stack px={2} py={1} alignItems="center" borderRadius={4} boxShadow={customShadows[1]}>
         {chartData.map((item) => (
-          <>
+          <React.Fragment key={item.id}>
             <Stack
-              key={item.id}
               component={ButtonBase}
               width="50%"
               mt={0.75}
@@ -123,7 +122,7 @@ const YourPiChart = () => {
             {item.id !== 2 && (
               <Divider sx={{ height: 50 }} orientation="vertical" variant="middle" flexItem />
             )}
-          </>
+          </React.Fragment>
         ))}
       </Stack>
     </Paper>
