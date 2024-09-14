@@ -82,7 +82,7 @@ const SignIn = () => {
 
         <Divider sx={{ my: 3 }}>or</Divider>
 
-        <Box component="form" mt={3} onSubmit={handleSubmit}>
+        <Box component="form" onSubmit={handleSubmit}>
           <TextField
             id="email"
             name="email"
