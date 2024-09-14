@@ -4,10 +4,10 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
 import IconifyIcon from 'components/base/IconifyIcon';
@@ -31,140 +31,138 @@ const SignIn = () => {
   };
 
   return (
-    <Stack flex={1} direction="column">
-      <Stack
-        mx="auto"
-        width={400}
-        height={1}
-        direction="column"
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <Box width={1}>
-          <Button
-            variant="text"
-            startIcon={
-              <IconifyIcon
-                icon="ic:round-keyboard-arrow-left"
-                sx={(theme) => ({ fontSize: `${theme.typography.h3.fontSize} !important` })}
-              />
-            }
-          >
-            Back to dashboard
-          </Button>
-        </Box>
+    <Stack
+      mx="auto"
+      width={410}
+      height="auto"
+      minHeight={800}
+      direction="column"
+      alignItems="center"
+      justifyContent="space-between"
+    >
+      <Box width={1}>
+        <Button
+          variant="text"
+          component={Link}
+          href="/"
+          sx={{ ml: -1.75, pl: 1, pr: 2 }}
+          startIcon={
+            <IconifyIcon
+              icon="ic:round-keyboard-arrow-left"
+              sx={(theme) => ({ fontSize: `${theme.typography.h3.fontSize} !important` })}
+            />
+          }
+        >
+          Back to dashboard
+        </Button>
+      </Box>
 
-        <Box>
-          <Typography align="center" variant="h4">
-            Sign In
-          </Typography>
-          <Typography mt={1.5} align="center" variant="body2">
-            Welcome back! Let's continue with,
-          </Typography>
+      <Box width={1}>
+        <Typography variant="h3">Sign In</Typography>
+        <Typography mt={1.5} variant="body2" color="text.disabled">
+          Enter your email and password to sign in!
+        </Typography>
 
-          <Button
-            variant="contained"
-            color="secondary"
+        <Button
+          variant="contained"
+          color="secondary"
+          size="large"
+          fullWidth
+          startIcon={<IconifyIcon icon="logos:google-icon" />}
+          sx={{
+            mt: 4,
+            fontWeight: 600,
+            bgcolor: 'info.main',
+            '& .MuiButton-startIcon': { mr: 1.5 },
+            '&:hover': { bgcolor: 'info.main' },
+          }}
+        >
+          Sign in with Google
+        </Button>
+
+        <Divider sx={{ my: 3 }}>or</Divider>
+
+        <Box component="form" mt={3} onSubmit={handleSubmit}>
+          <TextField
+            id="email"
+            name="email"
+            type="email"
+            label="Email"
+            value={user.email}
+            onChange={handleInputChange}
+            variant="filled"
+            placeholder="mail@example.com"
+            autoComplete="email"
+            sx={{ mt: 3 }}
             fullWidth
-            startIcon={<IconifyIcon icon="logos:google-icon" />}
-            sx={{ mt: 3, bgcolor: 'info.main', '&:hover': { bgcolor: 'info.main' } }}
-          >
-            Google
-          </Button>
-
-          <Divider sx={{ my: 3 }}>or</Divider>
-
-          <Stack component="form" mt={3} onSubmit={handleSubmit} direction="column" gap={2}>
-            <TextField
-              id="email"
-              name="email"
-              type="email"
-              value={user.email}
-              onChange={handleInputChange}
-              variant="filled"
-              placeholder="Your Email"
-              autoComplete="email"
-              fullWidth
-              autoFocus
-              required
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <IconifyIcon icon="ic:baseline-alternate-email" />
-                  </InputAdornment>
-                ),
-              }}
-            />
-            <TextField
-              id="password"
-              name="password"
-              type={showPassword ? 'text' : 'password'}
-              value={user.password}
-              onChange={handleInputChange}
-              variant="filled"
-              placeholder="Your Password"
-              autoComplete="current-password"
-              fullWidth
-              required
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <IconifyIcon icon="ic:outline-lock" />
-                  </InputAdornment>
-                ),
-                endAdornment: (
-                  <InputAdornment
-                    position="end"
-                    sx={{
-                      opacity: user.password ? 1 : 0,
-                      pointerEvents: user.password ? 'auto' : 'none',
-                    }}
+            autoFocus
+            required
+          />
+          <TextField
+            id="password"
+            name="password"
+            label="Password"
+            type={showPassword ? 'text' : 'password'}
+            value={user.password}
+            onChange={handleInputChange}
+            variant="filled"
+            placeholder="Min. 8 characters"
+            autoComplete="current-password"
+            sx={{ mt: 6 }}
+            fullWidth
+            required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment
+                  position="end"
+                  sx={{
+                    opacity: user.password ? 1 : 0,
+                    pointerEvents: user.password ? 'auto' : 'none',
+                  }}
+                >
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={() => setShowPassword(!showPassword)}
+                    sx={{ border: 'none', bgcolor: 'transparent !important' }}
+                    edge="end"
                   >
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={() => setShowPassword(!showPassword)}
-                      sx={{ border: 'none', bgcolor: 'transparent !important' }}
-                      edge="end"
-                    >
-                      <IconifyIcon
-                        icon={showPassword ? 'ic:outline-visibility' : 'ic:outline-visibility-off'}
-                        color="neutral.light"
-                      />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
+                    <IconifyIcon
+                      icon={showPassword ? 'ic:outline-visibility' : 'ic:outline-visibility-off'}
+                      color="neutral.main"
+                    />
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
+
+          <Stack mt={1.5} alignItems="center" justifyContent="space-between">
+            <FormControlLabel
+              control={<Checkbox id="checkbox" name="checkbox" size="medium" color="primary" />}
+              label="Keep me logged in"
+              sx={{ ml: -0.75 }}
             />
-
-            <Stack mt={-1.25} alignItems="center" justifyContent="space-between">
-              <FormControlLabel
-                control={<Checkbox id="checkbox" name="checkbox" size="medium" color="primary" />}
-                label="Remember me"
-                sx={{ ml: -0.75 }}
-              />
-              <Link href="#!" fontSize="body2.fontSize">
-                Forgot password?
-              </Link>
-            </Stack>
-
-            <Button type="submit" variant="contained" size="medium" fullWidth>
-              Sign In
-            </Button>
+            <Link href="#!" fontSize="body2.fontSize" fontWeight={600}>
+              Forgot password?
+            </Link>
           </Stack>
 
-          <Typography
-            mt={5}
-            variant="body2"
-            color="text.secondary"
-            align="center"
-            letterSpacing={0.25}
-          >
-            Don't have an account? <Link href={paths.signup}>Signup</Link>
-          </Typography>
+          <Button type="submit" variant="contained" size="large" sx={{ mt: 3 }} fullWidth>
+            Sign In
+          </Button>
         </Box>
 
-        <p>Hello!</p>
-      </Stack>
+        <Typography mt={3} variant="body2" letterSpacing={0.25}>
+          Not registered yet?{' '}
+          <Link href={paths.signup} color="primary.main" fontWeight={600}>
+            Create an Account
+          </Link>
+        </Typography>
+      </Box>
+
+      <Typography variant="body2" color="text.disabled" fontWeight={500}>
+        © 2022 Horizon UI. All Rights Reserved.
+      </Typography>
     </Stack>
   );
 };

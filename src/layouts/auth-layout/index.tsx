@@ -1,5 +1,8 @@
 import { Outlet } from 'react-router-dom';
-import { Box, Link, Stack, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import Image from 'components/base/Image';
 import Logo from 'assets/images/logo-white.png';
 import AuthBg from 'assets/images/auth/auth-bg.png';
@@ -32,7 +35,9 @@ const footerLinks: FooterLinksProps[] = [
 const AuthLayout = () => {
   return (
     <Stack justifyContent="space-between" height="100vh" bgcolor="info.lighter">
-      <Outlet />
+      <Stack px={1} py={2} flex={1} height={1} overflow="scroll">
+        <Outlet />
+      </Stack>
       <Stack
         flex={1}
         height={1}

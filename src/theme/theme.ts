@@ -39,6 +39,7 @@ import Card from './components/cards/Card';
 import CardMedia from './components/cards/CardMedia';
 import CardContent from './components/cards/CardContent';
 import DateCalendar from './components/date-picker/DateCalendar';
+import InputLabel from './components/inputs/InputLabel';
 
 export const theme = createTheme({
   palette,
@@ -80,6 +81,7 @@ export const theme = createTheme({
     MuiListItemIcon: ListItemIcon,
     MuiListItemText: ListItemText,
     MuiMenuItem: MenuItem,
+    MuiInputLabel: InputLabel,
     MuiAppBar: AppBar,
     MuiDrawer: Drawer,
     MuiLink: Link,

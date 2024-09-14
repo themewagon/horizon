@@ -11,7 +11,7 @@ const InputBase: Components<Omit<Theme, 'components'>>['MuiInputBase'] = {
       backgroundColor: `${theme.palette.info.lighter} !important`,
       fontSize: theme.typography.subtitle2.fontSize,
       color: theme.palette.text.secondary,
-      padding: theme.spacing(1.25, 2),
+      padding: theme.spacing(1.45, 2),
       letterSpacing: 0.5,
 
       '&:focus-within': {
