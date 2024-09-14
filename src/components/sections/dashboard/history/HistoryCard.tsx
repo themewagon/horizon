@@ -17,8 +17,6 @@ const HistoryCard = ({ data }: HistoryCardProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const containerSize = useResizeObserver(containerRef);
 
-  console.log(containerSize);
-
   return (
     <Card
       ref={containerRef}
