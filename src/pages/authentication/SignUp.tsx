@@ -162,7 +162,10 @@ const SignUp = () => {
       </Box>
 
       <Typography variant="body2" color="text.disabled" fontWeight={500}>
-        © 2022 Horizon UI. All Rights Reserved.
+        © 2022 Horizon UI. Made with ❤️ by{' '}
+        <Link href="https://themewagon.com/" target="_blank" rel="noreferrer" fontWeight={600}>
+          {'ThemeWagon'}
+        </Link>{' '}
       </Typography>
     </Stack>
   );
