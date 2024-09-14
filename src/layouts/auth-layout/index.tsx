@@ -9,24 +9,29 @@ import AuthBg from 'assets/images/auth/auth-bg.png';
 import Horizon from 'assets/images/auth/horizon.png';
 
 interface FooterLinksProps {
+  id: number | string;
   name: string;
   link: string;
 }
 
 const footerLinks: FooterLinksProps[] = [
   {
+    id: 1,
     name: 'Marketplace',
     link: '#!',
   },
   {
+    id: 2,
     name: 'License',
     link: '#!',
   },
   {
+    id: 3,
     name: 'Terms of Use',
     link: '#!',
   },
   {
+    id: 4,
     name: 'Blog',
     link: '#!',
   },
@@ -44,6 +49,7 @@ const AuthLayout = () => {
         direction="column"
         alignItems="center"
         justifyContent="center"
+        display={{ xs: 'none', md: 'flex' }}
         sx={(theme) => ({
           backgroundImage: `url('${AuthBg}')`,
           backgroundRepeat: 'no-repeat',
@@ -83,7 +89,13 @@ const AuthLayout = () => {
 
         <Stack mt="auto" height={80} spacing={5} alignItems="center" justifyContent="center">
           {footerLinks.map((item) => (
-            <Typography variant="body2" component={Link} href={item.link} color="info.lighter">
+            <Typography
+              key={item.id}
+              variant="body2"
+              component={Link}
+              href={item.link}
+              color="info.lighter"
+            >
               {item.name}
             </Typography>
           ))}
