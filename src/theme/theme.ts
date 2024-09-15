@@ -40,6 +40,7 @@ import CardMedia from './components/cards/CardMedia';
 import CardContent from './components/cards/CardContent';
 import DateCalendar from './components/date-picker/DateCalendar';
 import InputLabel from './components/inputs/InputLabel';
+import Divider from './components/data-display/Divider';
 
 export const theme = createTheme({
   palette,
@@ -88,6 +89,7 @@ export const theme = createTheme({
     MuiCard: Card,
     MuiCardMedia: CardMedia,
     MuiCardContent: CardContent,
+    MuiDivider: Divider,
     MuiAvatar: Avatar,
     MuiDataGrid: DataGrid,
     MuiAvatarGroup: AvatarGroup,
