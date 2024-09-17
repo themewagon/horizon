@@ -75,7 +75,7 @@ const SignUp = () => {
             '&:hover': { bgcolor: 'info.main' },
           }}
         >
-          Sign Up with Google
+          Sign up with Google
         </Button>
 
         <Divider sx={{ my: 3 }}>or</Divider>
