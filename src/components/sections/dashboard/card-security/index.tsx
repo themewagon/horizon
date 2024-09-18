@@ -10,10 +10,7 @@ const CardSecurity = () => {
     <Stack spacing={3} component={Paper} direction="column" sx={{ height: 350 }}>
       <Image src={Fingerprint} height={85} width={75} />
 
-      <Typography variant="h4" noWrap>
-        Control card security <br />
-        in-app with a tap
-      </Typography>
+      <Typography variant="h4">Control card security in-app with a tap</Typography>
 
       <Typography variant="caption" color="text.disabled" fontWeight={400}>
         Discover our cards benefits, with one tap.
