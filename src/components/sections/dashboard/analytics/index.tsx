@@ -3,7 +3,7 @@ import Earnings from './Earnings';
 import Sales from './Sales';
 import Spend from './Spend';
 import Tasks from './Tasks';
-import Balance from './Balance';
+import Balance from './balance';
 import Projects from './Projects';
 
 const Analytics = () => {
