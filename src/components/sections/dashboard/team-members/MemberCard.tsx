@@ -4,11 +4,10 @@ import Link from '@mui/material/Link';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import IconifyIcon from 'components/base/IconifyIcon';
+import CardMenu from './CardMenu';
 
 interface MemberCardProps {
   data: TeamMemberProps;
@@ -48,14 +47,7 @@ const MemberCard = ({ data }: MemberCardProps) => {
         </Stack>
 
         <CardActions sx={{ mr: -1.5 }}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="card-menu"
-            sx={{ bgcolor: 'transparent', '&:hover': { bgcolor: 'transparent' } }}
-          >
-            <IconifyIcon icon="ic:baseline-more-vert" color="text.disabled" />
-          </IconButton>
+          <CardMenu />
         </CardActions>
       </Stack>
     </Card>
