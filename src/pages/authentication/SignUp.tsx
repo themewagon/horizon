@@ -153,7 +153,12 @@ const SignUp = () => {
           </Button>
         </Box>
 
-        <Typography mt={3} variant="body2" letterSpacing={0.25}>
+        <Typography
+          mt={3}
+          variant="body2"
+          textAlign={{ xs: 'center', md: 'left' }}
+          letterSpacing={0.25}
+        >
           Already have an account?{' '}
           <Link href={paths.signin} color="primary.main" fontWeight={600}>
             Let's Sign in

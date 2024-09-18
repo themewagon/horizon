@@ -40,7 +40,7 @@ const footerLinks: FooterLinksProps[] = [
 const AuthLayout = () => {
   return (
     <Stack justifyContent="space-between" height="100vh" bgcolor="info.lighter">
-      <Stack px={1} py={2} flex={1} height={1} overflow="scroll">
+      <Stack px={3.5} py={2} flex={1} height={1} overflow="scroll">
         <Outlet />
       </Stack>
       <Stack
