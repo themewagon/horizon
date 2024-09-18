@@ -45,8 +45,8 @@ const BusinessDesign = () => {
         </Box>
       </Stack>
 
-      <Typography px={3.5} variant="h5" lineHeight={1.65} noWrap>
-        What do you need to know to <br /> create better products?
+      <Typography px={3.5} variant="h5" lineHeight={1.65}>
+        What do you need to know to create better products?
       </Typography>
 
       <Stack
@@ -59,8 +59,8 @@ const BusinessDesign = () => {
       >
         <Stack alignItems="center" spacing={3.5}>
           <Stack alignItems="center" justifyContent="center" borderRadius={2.5} spacing={0.75}>
-            <IconifyIcon icon="ic:sharp-timer" color="success.dark" fontSize="h3.fontSize" />
-            <Typography variant="body1" fontWeight={700}>
+            <IconifyIcon icon="ic:sharp-timer" color="success.dark" fontSize="h4.fontSize" />
+            <Typography variant="body2" fontWeight={700}>
               85 mins
             </Typography>
           </Stack>
@@ -69,9 +69,9 @@ const BusinessDesign = () => {
             <IconifyIcon
               icon="ic:outline-slow-motion-video"
               color="error.main"
-              fontSize="h3.fontSize"
+              fontSize="h4.fontSize"
             />
-            <Typography variant="body1" fontWeight={700}>
+            <Typography variant="body2" fontWeight={700}>
               Video format
             </Typography>
           </Stack>
@@ -86,7 +86,7 @@ const BusinessDesign = () => {
                 </Typography>
               )}
               total={22}
-              sx={{ '& .MuiAvatarGroup-avatar': { height: 32, width: 32 } }}
+              sx={{ '& .MuiAvatarGroup-avatar': { height: 30, width: 30 } }}
             >
               {avatars.map((avatar: string, index) => (
                 <Avatar key={avatar} alt="avatar" src={avatar} sx={{ zIndex: index }} />
