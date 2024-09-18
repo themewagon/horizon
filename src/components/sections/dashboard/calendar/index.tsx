@@ -134,6 +134,7 @@ const Calendar = () => {
     <Paper sx={{ p: 2, height: 350 }}>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DateCalendar
+          sx={{ width: 1 }}
           slots={{
             calendarHeader: (props: PickersCalendarHeaderProps<Dayjs>) => (
               <CalendarHeader

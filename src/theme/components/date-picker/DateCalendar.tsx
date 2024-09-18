@@ -7,7 +7,8 @@ const DateCalendar: Components<Omit<Theme, 'components'>>['MuiDateCalendar'] = {
       '& .MuiDayCalendar-header': {
         display: 'grid',
         gridTemplateColumns: 'repeat(7, 1fr)',
-        gap: theme.spacing(0.8),
+        placeItems: 'center',
+        gap: 0,
 
         '& .MuiDayCalendar-weekDayLabel': {
           color: theme.palette.text.primary,
@@ -18,9 +19,11 @@ const DateCalendar: Components<Omit<Theme, 'components'>>['MuiDateCalendar'] = {
       '& .MuiPickersSlideTransition-root': {
         '& .MuiDayCalendar-monthContainer': {
           '& .MuiDayCalendar-weekContainer': {
+            width: '100%',
             display: 'grid',
             gridTemplateColumns: 'repeat(7, 1fr)',
-            gap: theme.spacing(1),
+            placeItems: 'center',
+            gap: 0,
 
             '& .MuiPickersDay-root': {
               margin: 0,
