@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { tasksData } from 'data/tasksData';
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
-import ButtonBase from '@mui/material/ButtonBase';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import IconifyIcon from 'components/base/IconifyIcon';
+import ActionMenu from './ActionMenu';
 import Task from './Task';
 
 const Tasks = () => {
@@ -49,17 +48,7 @@ const Tasks = () => {
           />
         </FormGroup>
 
-        <Stack
-          component={ButtonBase}
-          alignItems="center"
-          justifyContent="center"
-          height={36}
-          width={36}
-          bgcolor="info.main"
-          borderRadius={2.5}
-        >
-          <IconifyIcon icon="ic:baseline-more-horiz" color="primary.main" fontSize="h4.fontSize" />
-        </Stack>
+        <ActionMenu />
       </Stack>
 
       <Box mt={2.5}>
