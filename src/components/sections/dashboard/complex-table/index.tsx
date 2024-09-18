@@ -16,17 +16,24 @@ const ComplexTable = () => {
   };
 
   return (
-    <Box component={Paper} px={0} height={390}>
-      <Stack px={3.5} justifyContent="space-between">
-        <Typography variant="h4">Complex Table</Typography>
+    <Box component={Paper} px={0} height={{ xs: 435, sm: 390 }}>
+      <Stack
+        px={3.5}
+        spacing={{ xs: 2, sm: 0 }}
+        direction={{ xs: 'column', sm: 'row' }}
+        justifyContent="space-between"
+      >
+        <Typography variant="h4" textAlign={{ xs: 'center', sm: 'left' }}>
+          Complex Table
+        </Typography>
 
         <TextField
           variant="filled"
           size="small"
-          placeholder="Search Task"
+          placeholder="Search here"
           value={searchText}
           onChange={handleInputChange}
-          sx={{ width: 220 }}
+          sx={{ mx: { xs: 'auto', sm: 'initial' }, width: 1, maxWidth: { xs: 300, sm: 220 } }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -37,7 +44,7 @@ const ComplexTable = () => {
         />
       </Stack>
 
-      <Box mt={1} height={313}>
+      <Box mt={{ xs: 1.25, sm: 1 }} height={313}>
         <DataTable searchText={searchText} />
       </Box>
     </Box>
